@@ -1,0 +1,37 @@
+{
+  "name": "sme-theme",
+  "version": "1.0.3",
+  "description": "SME Theme",
+  "main": "build/index.js",
+  "author": {
+    "name": "Marcelo Kohl"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "peerDependencies": {
+    "react": "^16.4.0"
+  },
+  "scripts": {
+    "start": "webpack --watch",
+    "build": "webpack",
+    "scss": "node-sass --watch scss -o css"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "webpack": "^4.12.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^2.1.1",
+    "mini-css-extract-plugin": "^0.7.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0",
+    "webpack-cli": "^3.0.4"
+  }
+}

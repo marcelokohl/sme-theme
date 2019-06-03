@@ -1,0 +1,41 @@
+$sizes: (
+  0: 0px,
+  1: 6px,
+  2: 10px,
+  3: 12px,
+  4: 18px,
+  5: 24px
+);
+$colors: (
+  red: #FF2640,
+  black: #111,
+  gray: #BCBFC5,
+  gray-30: #E7E7E7,
+  gray-10: #FAFAFA,
+  white: #FFF,
+);
+$spacers: (
+  0: 0px,
+  1: 6px,
+  2: 10px,
+  3: 12px,
+  4: 18px,
+  5: 30px
+);
+$container-max-widths: (
+  xxs: 320px,
+  xs: 340px,
+  sm: 540px,
+  md: 560px,
+  lg: 960px,
+  xl: 1140px
+);
+$grid-breakpoints: (
+  xxs: 0,
+  xs: 340px,
+  sm: 540px,
+  md: 560px,
+  lg: 960px,
+  xl: 1140px
+);
+$desktop-bar-height: 34px;

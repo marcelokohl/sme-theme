@@ -1,0 +1,7 @@
+.Button {
+  background-color: red;
+
+  &:before {
+    content: '';
+  }
+}
