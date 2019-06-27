@@ -1,0 +1,32 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.Menu {
+  position: fixed;
+  background: color(black);
+  top: 0;
+  width: 100vw;
+  bottom: 0;
+  left: -100vw;
+  z-index: 200;
+  transition: .3s;
+  .menu-content {
+    .Button {
+      background: transparent;
+      border: transparent;
+      display: block;
+      width: 100%;
+      text-align: left;
+      color: color(white);
+      font-size: font-size(xxl);
+
+      &.active {
+        color: color(red);
+      }
+    }
+  }
+
+  &.show {
+    left: 0;
+  }
+}

@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "utilities.scss";
+@import "functions.scss";
+@import "theme-dark.scss";
+
+html, body {
+  min-height: 100vh;
+  display: grid;
+  font-size: 12px;
+}
+.app {
+  color: color(black);
+  background-color: color(white);
+  font-family: Montserrat;
+}

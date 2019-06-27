@@ -25,6 +25,13 @@ CSS
 
 ### Example
 
+counter
+
+`<Counter step={-1} max={365} ref="counterDay">2</Counter>D &nbsp;`
+`<Counter step={-1} max={24} onComplete={() => {this.refs.counterDay.update();}} ref="counterHour">0</Counter>H &nbsp;`
+`<Counter step={-1} max={60} onComplete={() => {this.refs.counterHour.update();}} ref="counterMin">0</Counter>M &nbsp;`
+`<Counter step={-1} interval={1} max={60} active={true} onComplete={() => {this.refs.counterMin.update();}}>3</Counter>S`
+
 ```
 ...
 ```

@@ -1,0 +1,24 @@
+.d-block {
+  display: block;
+  width: 100%;
+}
+
+[class*="flex-"] {
+  display: flex!important;
+}
+.flex-center {
+  align-items: center;
+  justify-content: center;
+}
+.flex-align-center {
+  align-items: center;
+}
+.flex-justify-center {
+  justify-content: center;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-row {
+  flex-direction: row;
+}

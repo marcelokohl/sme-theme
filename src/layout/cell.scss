@@ -1,0 +1,19 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+[class*="Cell-"]{
+  float: left;
+  padding: 0 $grid-gutter;
+  box-sizing: border-box;
+}
+.no-gutter {
+  & > [class*="Cell-"]{
+    padding: 0;
+  }
+}
+
+@for $i from 1 through $grid-columns{
+  .Cell-#{$i}{
+    width: 100% / $grid-columns * $i
+  }
+}

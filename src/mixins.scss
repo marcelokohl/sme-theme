@@ -1,12 +1,6 @@
-@mixin aspect-ratio($width, $height) {
-  position: relative;
-  &:before{
-    display: block;
-    content: " ";
-    width: 100%;
-    padding-top: ($height / $width) * 100%;
-  }
-}
+@import "./mixins/breakpoints.scss";
+@import "./mixins/aspect-ratio.scss";
+
 @mixin position-abslute() {
   position: absolute;
   top: 0;right: 0;bottom: 0;left: 0;
@@ -26,47 +20,8 @@
     outline: none;
   }
 }
-@mixin scrollbar() {
-  /* Scrollbar styles */
 
-  // Firefox
-  scrollbar-color: color(gray) color(white);
-  scrollbar-width: thin;
-
-  // webkit
-  &::-webkit-scrollbar {
-    width: 3px;
-    height: 3px;
-  }
-  &::-webkit-scrollbar-track {
-    box-shadow: none;
-    border-radius: 0;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    border-radius: 0;
-    background: color(gray);
-    box-shadow: none;
-  }
-  @include media-breakpoint-up(md) {
-    &::-webkit-scrollbar {
-      width: 8px;
-      height: 8px;
-    }
-  }
-}
-
-@function color($key) {
-  @return map-get($colors, $key);
-}
-
-@function size($key) {
-  @return map-get($sizes, $key);
-}
-
-@function space($key) {
-  @return map-get($spacers, $key);
-}
-@function container-max-width($key) {
-  @return map-get($container-max-widths, $key);
+@mixin disabled {
+  opacity: .4;
+  filter: grayscale(100%);
 }

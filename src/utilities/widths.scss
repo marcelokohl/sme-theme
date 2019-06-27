@@ -1,0 +1,15 @@
+// @each $size, $width in $widths {
+//   .max-w-#{$size} {
+//     max-width: $width!important;
+//   }
+//   .min-w-#{$size} {
+//     min-width: $width!important;
+//   }
+// }
+
+.w-full {
+  width: 100%!important;
+}
+.h-full {
+  height: 100%!important;
+}

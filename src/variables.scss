@@ -1,41 +1,98 @@
-$sizes: (
-  0: 0px,
-  1: 6px,
-  2: 10px,
-  3: 12px,
-  4: 18px,
-  5: 24px
+@import "functions.scss";
+
+$spacer: 1rem !default;
+$space-sizes: () !default;
+$space-sizes: map-merge(
+  (
+    0: 0,
+    xs: ($spacer * .25),
+    sm: ($spacer * .5),
+    md: $spacer,
+    lg: ($spacer * 1.5),
+    xl: ($spacer * 3)
+  ),
+  $space-sizes
 );
+
+$text-sizes: (
+  xs: .7rem,
+  sm: .8rem,
+  md: 1rem,
+  lg: 1.5rem,
+  xl: 2.1rem,
+  xxl: 4rem
+);
+$icon-sizes: (
+  xs: 12px,
+  sm: 16px,
+  md: 24px,
+  lg: 32px,
+  xl: 64px
+);
+$image-sizes: (
+  xs: 50px,
+  sm: 100px,
+  md: 200px,
+  lg: 400px,
+  xl: 500px
+);
+// $space-sizes: (
+//   xs: 8px,
+//   sm: 12px,
+//   md: 18px,
+//   lg: 22px,
+//   xl: 30px
+// );
+$rounded-sizes: (
+  xs: 2px,
+  sm: 4px,
+  md: 6px,
+  lg: 8px,
+  xl: 10px
+);
+$container-sizes: (
+  xs: 320px,
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+);
+$breakpoint-sizes: (
+  xl: 1200px,
+  lg: 992px,
+  md: 768px,
+  sm: 576px,
+  xs: 0,
+);
+
 $colors: (
-  red: #FF2640,
-  black: #111,
-  gray: #BCBFC5,
-  gray-30: #E7E7E7,
-  gray-10: #FAFAFA,
-  white: #FFF,
+  default:    #FF5400,
+  primary:    #FF5400,
+  secondary:  #FF5400,
+  muted:      #81807E,
+
+  red:        #DE1A1A,
+  orange:     #FF5400,
+  yellow:     #FFAE00,
+  blue:       #4392F1,
+  green:      #95C623,
+  black:      #111,
+  white:      #FFF,
+
+  gray:       #BCBFC5,
+  gray-10:    #FAFAFA,
+  gray-30:    #E7E7E7,
+  gray-80:    #252525,
+
+  transparent: transparent,
 );
-$spacers: (
-  0: 0px,
-  1: 6px,
-  2: 10px,
-  3: 12px,
-  4: 18px,
-  5: 30px
-);
-$container-max-widths: (
-  xxs: 320px,
-  xs: 340px,
-  sm: 540px,
-  md: 560px,
-  lg: 960px,
-  xl: 1140px
-);
-$grid-breakpoints: (
-  xxs: 0,
-  xs: 340px,
-  sm: 540px,
-  md: 560px,
-  lg: 960px,
-  xl: 1140px
-);
-$desktop-bar-height: 34px;
+
+// GRID
+$grid-gutter: 1rem;
+$grid-columns: 12;
+$grid-max: 1004px;
+
+// BUTTON
+$botton-outline-border-size: 2px;
+
+// $container-width: width(md);

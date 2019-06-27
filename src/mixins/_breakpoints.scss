@@ -1,0 +1,5 @@
+@mixin media-breakpoint($name) {
+  @media (max-width: breakpoint($name)) {
+    @content;
+  }
+}

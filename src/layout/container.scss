@@ -1,0 +1,21 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.Container {
+  margin: 0 auto;
+  max-width: container-size(xl);
+
+  @each $name, $value in $breakpoint-sizes {
+    @include media-breakpoint($name) {
+      max-width: $value;
+    };
+  };
+  @each $name, $value in $container-sizes {
+    &.max-w-#{$name} {
+      max-width: $value!important;
+    }
+    &.min-w-#{$name} {
+      min-width: $value!important;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.Progress {
+  background-color: rgba(color(white),.4);
+  width: 100%;
+  .progress-bar {
+    height: 4px;
+    background-color: color(white);
+  }
+
+  @each $name, $value in $colors {
+    &.#{$name} {
+      .progress-bar {
+        background: $value;
+      }
+    }
+  }
+}

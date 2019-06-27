@@ -1,0 +1,33 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.Icon {
+  object-fit: cover;
+  @each $name, $value in $icon-sizes { //ICON SIZES
+    &.#{$name} {
+      width: $value!important;
+      height: $value!important;
+    }
+  }
+
+  filter: brightness(0);
+  &.invert {
+    filter: brightness(1);
+  }
+
+  &.white {
+    filter: brightness(1)!important;
+  }
+  &.black {
+    filter: brightness(0)!important;
+  }
+}
+
+.app.dark {
+  .Icon {
+    filter: brightness(1);
+    &.invert {
+      filter: brightness(0);
+    }
+  }
+}

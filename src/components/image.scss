@@ -1,0 +1,35 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.Image {
+  &.border {
+    border: 6px solid white;
+  }
+  // ROUNDED
+  &.rounded {
+    border-radius: 100%;
+  }
+  &[class*="rounded"], &[class*="image-"] {
+    overflow: hidden;
+    display: block;
+    object-fit: cover;
+    @include aspect-ratio(1,1);
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      @include position-abslute();
+    }
+  }
+  @each $name, $value in $text-sizes {
+    &.rounded-#{$name} {
+      border-radius: $value!important;
+    }
+  }
+  @each $name, $value in $image-sizes {
+    &.image-#{$name} {
+      width: $value!important;
+      height: $value!important;
+    }
+  }
+}

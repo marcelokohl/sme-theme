@@ -1,0 +1,29 @@
+@mixin scrollbar() {
+  /* Scrollbar styles */
+
+  // Firefox
+  scrollbar-color: color(gray) color(white);
+  scrollbar-width: thin;
+
+  // webkit
+  &::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+  }
+  &::-webkit-scrollbar-track {
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    background: color(gray);
+    box-shadow: none;
+  }
+  // @include media-breakpoint-up(md) {
+  //   &::-webkit-scrollbar {
+  //     width: 8px;
+  //     height: 8px;
+  //   }
+  // }
+}

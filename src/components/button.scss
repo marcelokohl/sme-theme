@@ -1,7 +1,78 @@
-.Button {
-  background-color: red;
+@import "../variables.scss";
+@import "../mixins.scss";
 
-  &:before {
-    content: '';
+.Button {
+  color: color(white);
+  font-size: font-size(md);
+  padding: space-size(md);
+  background: color(default);
+  border: $botton-outline-border-size solid color(default);
+  font-style: normal;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  box-sizing: border-box;
+  border-radius: 100px;
+  line-height: 1em;
+  text-transform: uppercase;
+
+  @each $name, $value in $text-sizes {
+    &.#{$name} {
+      font-size: $value!important;
+      padding: space-size(#{$name})!important;
+    }
+  }
+  &.rounded {
+    line-height: 0;
+  }
+  &.block {
+    display: block!important;
+    text-align: center!important;
+    width: 100%!important;
+  }
+  &.unset {
+    all:unset;
+  }
+  &.link {
+    all:unset;
+    text-decoration: underline;
+  }
+
+  &.invert {
+    background-color: color(white);
+    border-color: color(white);
+    color: color(black);
+    &.outline {
+      color: color(white);
+      box-shadow: none;
+    }
+  }
+  @each $name, $value in $colors {
+    &.#{$name} {
+      background-color: $value;
+      border-color: $value;
+      box-shadow: 0px 0px 40px rgba($value, 0.5);
+      &.outline {
+        color: $value;
+        box-shadow: none;
+      }
+    }
+  }
+  &.outline {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
+.app.dark .Button {
+  &.invert {
+    background-color: color(black);
+    border-color: color(black);
+    color: color(white);
+    &.outline {
+      background-color: transparent;
+      color: color(black);
+    }
   }
 }

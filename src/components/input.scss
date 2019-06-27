@@ -1,0 +1,72 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+[class*="Input-"] {
+  margin-bottom: 16px;
+  &.error {
+    label, .error {
+      color: color(red);
+    }
+    input, select {
+      border-color: color(red);
+    }
+  }
+  input, select {
+    all:unset;
+    font-size: size(lg);
+    color: color(white);
+    border: 0;
+    border-bottom: 1px solid color(gray-80);
+    width: 100%;
+    background-color: transparent;
+    font-weight: 700;
+    box-shadow: none;
+    padding: space(md) 0;
+    -webkit-appearance: none;
+    border-radius: 0;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+  }
+  label {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+
+    color: #81807E;
+  }
+}
+
+.Input-select {
+  select {
+  }
+  option {
+    all:unset;
+    background: color(black);
+    &:active, &:focus, &:checked {
+      background: color(black);
+    }
+  }
+}
+.Input-image {
+  position: relative;
+  padding: 0;
+
+  input {
+    opacity: 0;
+    @include position-abslute();
+  }
+  .Image {
+    border: 6px solid white;
+  }
+  .Text {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    color: #FFFFFF;
+  }
+}

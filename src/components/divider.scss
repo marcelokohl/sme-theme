@@ -1,0 +1,13 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.Divider {
+  background-color: color(white);
+  opacity: .1;
+  height: 1px;
+  width: 100%;
+
+  &.invert {
+    background-color: color(black);
+  }
+} 

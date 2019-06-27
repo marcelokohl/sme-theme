@@ -1,0 +1,39 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.Card {
+  border-radius: rounded-size(md);
+  padding: space-size(md);
+  // box-shadow: 0px 0px 40px rgba(255, 174, 0, 0.5);
+  color: color(white);
+
+  // &.orange {
+  //   box-shadow: 0px 0px 40px rgba(255, 84, 0, 0.5);
+  //   background: #FF5400;
+  // }
+  // &.yellow {
+  //   background: #FFAE00;
+  // }
+  &.invert {
+    background-color: color(black);
+    color: color(white);
+  }
+  @each $name, $value in $colors {
+    &.#{$name} {
+      background-color: $value;
+      border-color: $value;
+      // box-shadow: 0px 0px 40px rgba($value, 0.5);
+      // &.outline {
+      //   color: $value;
+      //   box-shadow: none;
+      // }
+    }
+  }
+}
+
+.app.dark .Card {
+  &.invert {
+    background-color: color(white);
+    color: color(black);
+  }
+}
