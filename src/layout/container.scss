@@ -4,6 +4,7 @@
 .Container {
   margin: 0 auto;
   max-width: container-size(xl);
+  width: 100%;
 
   @each $name, $value in $breakpoint-sizes {
     @include media-breakpoint($name) {

@@ -8,7 +8,7 @@
   @return map-get($space-sizes, $key);
 }
 @function breakpoint-size($key) {
-  @return map-get($breakpoints, $key);
+  @return map-get($breakpoint-sizes, $key);
 }
 @function container-size($key) {
   @return map-get($container-sizes, $key);

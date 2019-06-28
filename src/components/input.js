@@ -70,7 +70,12 @@ const Input = props => {
 
 Input.defaultProps = {
   type: 'text',
-  list: []
+  list: [],
+  input: {
+    onChange: function functionName() {
+      
+    }
+  },
 };
 
 export default Input;

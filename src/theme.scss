@@ -9,6 +9,7 @@ html, body {
   min-height: 100vh;
   display: grid;
   font-size: 12px;
+  overflow-x: hidden;
 }
 .app {
   color: color(black);

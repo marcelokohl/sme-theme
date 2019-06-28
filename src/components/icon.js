@@ -3,10 +3,10 @@ import React from "react";
 require('./icon.scss');
 
 const Icon = props => {
-  const { src, className } = props;
+  const { name, className } = props;
   let c = "Icon" + (className?" "+className:'');
   return (
-    <img src={src} className={c} />
+    <img src={`images/icons/${name}.svg`} className={c} />
   );
 };
 

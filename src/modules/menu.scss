@@ -2,14 +2,6 @@
 @import "../mixins.scss";
 
 .Menu {
-  position: fixed;
-  background: color(black);
-  top: 0;
-  width: 100vw;
-  bottom: 0;
-  left: -100vw;
-  z-index: 200;
-  transition: .3s;
   .menu-content {
     .Button {
       background: transparent;
@@ -18,7 +10,7 @@
       width: 100%;
       text-align: left;
       color: color(white);
-      font-size: font-size(xxl);
+      // font-size: font-size(xxl);
 
       &.active {
         color: color(red);
@@ -29,4 +21,14 @@
   &.show {
     left: 0;
   }
+  @include media-breakpoint-max(md) {
+    position: fixed;
+    background: color(black);
+    top: 0;
+    width: 100vw;
+    bottom: 0;
+    left: -100vw;
+    z-index: 200;
+    transition: .3s;
+  };
 }

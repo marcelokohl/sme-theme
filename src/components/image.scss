@@ -32,4 +32,10 @@
       height: $value!important;
     }
   }
+  @each $name, $value in $image-sizes {
+    &.#{$name} {
+      width: $value!important;
+      height: $value!important;
+    }
+  }
 }

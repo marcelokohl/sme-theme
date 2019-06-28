@@ -8,9 +8,7 @@ const Card = props => {
   let c = "Card " + (className?className:'');
   return (
     <div className={c}>
-      <Grid>
-        {children}
-      </Grid>
+      {children}
     </div>
   );
 };

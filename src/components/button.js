@@ -10,7 +10,7 @@ const Button = props => {
     if (window.location.pathname == to) {
       c += ' active';
     }
-    return <Link className={c} to={to}>{children}</Link>;
+    return <Link className={c} to={to} onClick={onClick}>{children}</Link>;
   } else if (href) {
     return <a className={c} href={href} target={target}>{children}</a>;
   } else {
@@ -19,7 +19,8 @@ const Button = props => {
 };
 
 Button.defaultProps = {
-  target: '_self'
+  target: '_self',
+  onClick: function functionName() {}
 };
 
 export default Button;

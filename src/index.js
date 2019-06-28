@@ -10,6 +10,7 @@ import Card from "./components/card";
 import Progress from "./components/progress";
 import Divider from "./components/divider";
 import Counter from "./components/counter";
+import Status from "./components/status";
 
 import Container from "./layout/container";
 import Page from "./layout/page";
@@ -23,6 +24,7 @@ import Wrap from "./layout/wrap";
 import Navbar from "./modules/navbar";
 import Menu from "./modules/menu";
 import Titlebar from "./modules/titlebar";
+import Pagination from "./modules/pagination";
 
 // module.exports.Text = Text;
 // module.exports.Button = Button;
@@ -36,7 +38,9 @@ export {
   Menu,
   Card,
   Titlebar,
+  Pagination,
   Progress,
+  Status,
   Divider,
   Bg,
   Counter,

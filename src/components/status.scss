@@ -1,0 +1,18 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.Status {
+  &:before {
+    content: '';
+    width: 9px;
+    height: 9px;
+    background: color(red);
+    display: inline-block;
+    border-radius: 100%;
+    margin-right: space-size(xs);
+  }
+
+  &.active:before {
+  background: color(green);
+  }
+}

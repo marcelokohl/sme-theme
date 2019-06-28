@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, Button, Template, Container, Icon, Titlebar } from "../../../../_temp/sme-theme/src/index.js"
+import { Text, Button, Template, Container, Icon, Titlebar, Image } from "../../../../_temp/sme-theme/src/index.js"
 
 require('./menu.scss');
 
@@ -23,10 +23,7 @@ class Menu extends Component {
       <div className={this.state.show?c + ' show':c}>
         <Titlebar>
           <Container className="max-w-xs pr">
-            <Button to="" className="unset pa-l" onClick={() => {this.setState({show: false})}}>
-              <Icon src="/images/icons/close.svg" />
-            </Button>
-            <Text tag="span" className="title lg">Menu</Text>
+            <Image src="images/logo.svg" />
           </Container>
         </Titlebar>
         <nav className="menu-content">
