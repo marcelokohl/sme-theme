@@ -1,7 +1,5 @@
 import React from "react";
 
-require('./grid.scss');
-
 const Grid = props => {
   const { children, gutter, className } = props;
   let c = "Grid " + (className?className:'');

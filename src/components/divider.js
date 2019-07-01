@@ -1,7 +1,5 @@
 import React from "react";
 
-require('./divider.scss');
-
 const Divider = props => {
   const { children, className } = props;
   let c = "Divider " + (className?className:'');

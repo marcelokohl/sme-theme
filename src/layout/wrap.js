@@ -1,7 +1,5 @@
 import React from 'react';
 
-require('./wrap.scss');
-
 const Wrap = props => {
   const { children, className } = props;
   let c = "Wrap " + (className?className:'');

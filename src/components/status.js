@@ -1,7 +1,5 @@
 import React from "react";
 
-require('./status.scss');
-
 const Status = props => {
   const { children, className, active } = props;
   let c = "Status" + (className?' '+className:'');

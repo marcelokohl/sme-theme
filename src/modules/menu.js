@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Text, Button, Template, Container, Icon, Titlebar, Image } from "../../../../_temp/sme-theme/src/index.js"
 
-require('./menu.scss');
-
 class Menu extends Component {
   constructor(props) {
     super(props);

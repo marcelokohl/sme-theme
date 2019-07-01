@@ -1,7 +1,5 @@
 import React from "react";
 
-require('./progress.scss');
-
 const Progress = props => {
   const { className, progress } = props;
   let c = "Progress " + (className?className:'');

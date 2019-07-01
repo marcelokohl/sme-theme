@@ -1,5 +1,5 @@
-@import "./mixins/breakpoints.scss";
-@import "./mixins/aspect-ratio.scss";
+@import "mixins/breakpoints.scss";
+@import "mixins/aspect-ratio.scss";
 
 @mixin position-abslute() {
   position: absolute;

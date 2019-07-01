@@ -1,4 +1,5 @@
 @import "functions.scss";
+@import "mixins.scss";
 
 $spacer: 1rem !default;
 $space-sizes: () !default;
@@ -91,6 +92,9 @@ $colors: (
 $grid-gutter: 1rem;
 $grid-columns: 12;
 $grid-max: 1004px;
+
+// FONT FAMILY:
+$font: Montserrat!default;
 
 // BUTTON
 $botton-outline-border-size: 2px;

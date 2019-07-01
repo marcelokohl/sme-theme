@@ -2,8 +2,6 @@ import React from "react";
 // import {withRouter} from 'react-router-dom';
 import { Image, Button, Container } from "../../../../_temp/sme-theme/src/index.js"
 
-require('./titlebar.scss');
-
 const Titlebar = props => {
   const { children, className } = props;
   let c = 'Titlebar' + (className?' '+className:'');

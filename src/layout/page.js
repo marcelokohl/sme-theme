@@ -1,7 +1,5 @@
 import React from "react";
 
-require('./page.scss');
-
 const Page = props => {
   const { children, name, className, loading } = props;
   let c = "Page page-" + name + " " + (className?className:'');

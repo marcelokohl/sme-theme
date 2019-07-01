@@ -1,8 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-require('./button.scss');
-
 const Button = props => {
   const { children, to, href, className, onClick, target } = props;
   let c = "Button " + (className?className:'');

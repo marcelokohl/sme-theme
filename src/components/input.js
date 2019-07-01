@@ -2,10 +2,6 @@ import React from "react";
 import InputMask from 'react-input-mask'; //https://www.npmjs.com/package/react-input-mask
 import { Template } from "../../../../_temp/sme-theme/src/index.js"
 
-require('./input.scss');
-
-
-
 const Campo = props => {
   const { children, label, className, errorText } = props;
   return (
@@ -73,7 +69,7 @@ Input.defaultProps = {
   list: [],
   input: {
     onChange: function functionName() {
-      
+
     }
   },
 };

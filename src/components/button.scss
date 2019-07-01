@@ -1,7 +1,8 @@
 @import "../variables.scss";
-@import "../mixins.scss";
+
 
 .Button {
+  font-family: $font;
   color: color(white);
   font-size: font-size(md);
   padding: space-size(md);

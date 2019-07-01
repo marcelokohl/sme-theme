@@ -1,7 +1,5 @@
 import React, { Component, Fragment } from 'react';
 
-require('./counter.scss');
-
 class Counter extends Component {
   constructor(props) {
     super(props);

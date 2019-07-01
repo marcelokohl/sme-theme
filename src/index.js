@@ -26,11 +26,6 @@ import Menu from "./modules/menu";
 import Titlebar from "./modules/titlebar";
 import Pagination from "./modules/pagination";
 
-// module.exports.Text = Text;
-// module.exports.Button = Button;
-
-require('./theme.scss');
-
 export {
   Text,
   Button,

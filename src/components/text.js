@@ -1,7 +1,5 @@
 import React from "react";
 
-require('./text.scss');
-
 const Text = props => {
   const { children, className, tag } = props;
   let c = "Text " + (className?className:'');

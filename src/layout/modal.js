@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Image, Button, Divider, Template, Container } from "../../../../_temp/sme-theme/src/index.js"
-require('./modal.scss');
 
 class Modal extends Component {
   constructor(props) {

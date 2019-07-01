@@ -1,7 +1,5 @@
 import React from "react";
 
-require('./bg.scss');
-
 const Bg = props => {
   const { className, image, color, overlayerImage, overlayerColor } = props;
   let c = "Bg " + (className?className:'');

@@ -1,7 +1,5 @@
 import React from "react";
 
-require('./container.scss');
-
 const Container = props => {
   const { children, className } = props;
   let c = "Container" + (className?' '+className:'');
