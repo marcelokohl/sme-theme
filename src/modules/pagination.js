@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Text, Button } from "../../../../_temp/sme-theme/src/index.js"
+import { Text, Button, Icon } from "../../../../_temp/sme-theme/src/index.js"
 
 class Pagination extends Component {
   constructor(props) {
@@ -13,6 +13,13 @@ class Pagination extends Component {
 
   buttonClass(i) {
     return this.state.page===i?'rounded':'rounded transparent'
+  }
+
+  createLeft() {
+    return <Button className="rounded transparent" onClick={() => this.prevPage()}><Icon name="arrow-left"/></Button>
+  }
+  createRight() {
+    return <Button className="rounded transparent" onClick={() => this.nextPage()}><Icon name="arrow-right"/></Button>
   }
 
   createFirst() {
@@ -42,6 +49,20 @@ class Pagination extends Component {
   changePage(el, page) {
     this.setState({page: Number(el.target.innerHTML)})
   }
+
+  prevPage() {
+    if (this.state.page <= 1) {
+      return
+    }
+    this.setState({page: this.state.page-1})
+  }
+  nextPage() {
+    if (this.state.page >= this.state.size) {
+      return
+    }
+    this.setState({page: this.state.page+1})
+  }
+
   componentDidUpdate() {
     this.props.onChange(this.state.page)
   }
@@ -54,27 +75,33 @@ class Pagination extends Component {
     }
     else if (this.state.page < this.state.step * 2 + 1) {
       return (
-        <Fragment>
+        <div className={c}>
+          {this.createLeft()}
           {this.createList(1, this.state.step * 2 + 4)}
           {this.createLast()}
-        </Fragment>
+          {this.createRight()}
+        </div>
       )
     }
     else if (this.state.page > this.state.size - this.state.step * 2) {
       return (
-        <Fragment>
+        <div className={c}>
+          {this.createLeft()}
           {this.createFirst()}
           {this.createList(this.state.size - this.state.step * 2 - 2, this.state.size + 1)}
-        </Fragment>
+          {this.createRight()}
+        </div>
       )
     }
     else {
       return (
-        <Fragment>
+        <div className={c}>
+          {this.createLeft()}
           {this.createFirst()}
           {this.createList(this.state.page - this.state.step, this.state.page + this.state.step + 1)}
           {this.createLast()}
-        </Fragment>
+          {this.createRight()}
+        </div>
       )
     }
   };
