@@ -17,6 +17,8 @@
   border-radius: 100px;
   line-height: 1em;
   text-transform: uppercase;
+  outline: none;
+  cursor: pointer;
 
   @each $name, $value in $text-sizes {
     &.#{$name} {

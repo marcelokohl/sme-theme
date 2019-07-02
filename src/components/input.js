@@ -3,11 +3,14 @@ import InputMask from 'react-input-mask'; //https://www.npmjs.com/package/react-
 import { Template } from "../../../../_temp/sme-theme/src/index.js"
 
 const Campo = props => {
-  const { children, label, className, errorText } = props;
+  const { children, label, className, errorText, msg } = props;
   return (
     <div className={className}>
       <label>{label}</label>
       {children}
+      <Template condition={msg != undefined}>
+        <span className="muted">{msg}</span>
+      </Template>
       <Template condition={errorText != undefined}>
         <span className="error">{errorText}</span>
       </Template>
@@ -16,23 +19,31 @@ const Campo = props => {
 };
 
 const Input = props => {
-  const { children, type, className, src, mask, list } = props;
+  const { children, type, className, src, mask, list, msg, imageClass } = props;
   let c = "Input-"+ type + " " + (className?" "+className:'');
 
   let html = [];
 
   if (type == 'image') {
     html.push (
-      <div className={c}>
-        <div className="Image rounded image-sm border mx-auto">
+      <Campo className={c} label={props.label} key={props.input} msg={msg}>
+        <div className={imageClass}>
           <img id="myImg" src={src} />
         </div>
-        <div className="Text mt-1">Editar</div>
+        <div className="Button">Editar</div>
         <input onChange={(event)=>{document.getElementById('myImg').src = URL.createObjectURL(event.target.files[0])}} className="form-file-image" type="file" name="myImage" accept="image/*"/>
-      </div>
+      </Campo>
     )
-
-  } else if (type == 'select') {
+  }
+  else if (type == 'switch') {
+    html.push (
+      <Campo className={c} label={children} key={props.input} msg={msg}>
+        <input type="checkbox"/>
+        <span></span>
+      </Campo>
+    )
+  }
+  else if (type == 'select') {
     let html_list = []
     if (list.length) {
       for (var i = 0; i < list.length; i++) {
@@ -56,7 +67,7 @@ const Input = props => {
     );
   } else {
     html.push (
-      <Campo className={c} label={children} key={props.input}> { /* @kohl passei o input qui pra key tbm */ }
+      <Campo className={c} label={children} key={props.input} msg={msg}> { /* @kohl passei o input qui pra key tbm */ }
         <input type={type} onChange={e => props.input.onChange(e)} value={props.input.value} />
       </Campo>
     );

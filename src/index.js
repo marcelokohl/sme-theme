@@ -1,6 +1,5 @@
 import Text from "./components/text";
 import Button from "./components/button";
-import Switch from "./components/switch";
 import Image from "./components/image";
 import Icon from "./components/icon";
 import Input from "./components/input";
@@ -11,6 +10,8 @@ import Progress from "./components/progress";
 import Divider from "./components/divider";
 import Counter from "./components/counter";
 import Status from "./components/status";
+import Tabs from "./components/tabs";
+import Tab from "./components/tab";
 
 import Container from "./layout/container";
 import Page from "./layout/page";
@@ -33,6 +34,8 @@ export {
   Menu,
   Card,
   Titlebar,
+  Tabs,
+  Tab,
   Pagination,
   Progress,
   Status,
@@ -46,7 +49,6 @@ export {
   Wrap,
   Page,
   Table,
-  Switch,
   Image,
   Icon,
   Grid,
