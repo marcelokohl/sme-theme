@@ -35,7 +35,9 @@ class Input extends React.Component {
     if (type == 'image') {
       html.push (
         <Template>
-          <Image className={imageClass} src={this.state.fileSrc} />
+          <Template condition={this.state.fileSrc}>
+            <Image className={imageClass} src={this.state.fileSrc} />
+          </Template>
           <Button>Editar</Button>
           <input ref="field" onChange={e =>{this.setState({fileSrc:URL.createObjectURL(e.target.files[0])});this.props.onChange(e)}} type="file" accept="image/*"/>
         </Template>
