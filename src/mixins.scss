@@ -25,3 +25,11 @@
   opacity: .4;
   filter: grayscale(100%);
 }
+
+@mixin reset {
+  background: initial;
+  border: 0;
+  padding: 0;
+  text-transform: initial;
+  display: initial;
+}

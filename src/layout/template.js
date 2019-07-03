@@ -1,13 +1,8 @@
 import React, { Component, Fragment } from 'react';
 
 const Template = props => {
-  const { children, condition, array } = props;
+  const { children, condition } = props;
   let html = []
-  // if (array) {
-  //   array.map(function(name, index){
-  //     html.push(<Fragment key={index}>{children}</Fragment>)
-  //   })
-  // } else
   if (condition) {
     html.push(<Fragment>{children}</Fragment>)
   } else {

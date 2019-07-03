@@ -1,4 +1,5 @@
 import Text from "./components/text";
+import Title from "./components/title";
 import Button from "./components/button";
 import Image from "./components/image";
 import Icon from "./components/icon";
@@ -12,6 +13,7 @@ import Counter from "./components/counter";
 import Status from "./components/status";
 import Tabs from "./components/tabs";
 import Tab from "./components/tab";
+import Breadcrumb from "./components/breadcrumb";
 
 import Container from "./layout/container";
 import Page from "./layout/page";
@@ -29,9 +31,11 @@ import Pagination from "./modules/pagination";
 
 export {
   Text,
+  Title,
   Button,
   Navbar,
   Menu,
+  Breadcrumb,
   Card,
   Titlebar,
   Tabs,

@@ -1,27 +1,28 @@
 @import "functions.scss";
 @import "mixins.scss";
 
-$spacer: 1rem !default;
-$space-sizes: () !default;
-$space-sizes: map-merge(
-  (
-    0: 0,
-    xs: ($spacer * .25),
-    sm: ($spacer * .5),
-    md: $spacer,
-    lg: ($spacer * 1.5),
-    xl: ($spacer * 3)
-  ),
-  $space-sizes
+$space-sizes:(
+  0: 0,
+  xs: .23rem,
+  sm: .5rem,
+  md: 1rem,
+  lg: 1.5rem,
+  xl: 3rem
 );
 
 $text-sizes: (
   xs: .7rem,
-  sm: .8rem,
+  sm: .83rem,
   md: 1rem,
   lg: 1.5rem,
-  xl: 2.1rem,
-  xxl: 4rem
+  xl: 2.1rem
+);
+$title-sizes: (
+  xs: 1.2rem,
+  sm: 1.5rem,
+  md: 2.16rem,
+  lg: 4.1rem,
+  xl: 5rem
 );
 $icon-sizes: (
   xs: 12px,

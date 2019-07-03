@@ -1,12 +1,12 @@
 @import "../variables.scss";
 
 
-[class*="Cell-"]{
+.Grid [class*="Cell-"]{
   float: left;
   padding: 0 $grid-gutter;
   box-sizing: border-box;
 }
-.no-gutter {
+.Grid.no-gutter {
   & > [class*="Cell-"]{
     padding: 0;
   }
