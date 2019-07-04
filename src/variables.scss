@@ -45,12 +45,19 @@ $image-sizes: (
 //   lg: 22px,
 //   xl: 30px
 // );
+// $rounded-sizes: (
+//   xs: 2px,
+//   sm: 4px,
+//   md: 6px,
+//   lg: 8px,
+//   xl: 10px
+// );
 $rounded-sizes: (
-  xs: 2px,
-  sm: 4px,
-  md: 6px,
-  lg: 8px,
-  xl: 10px
+  xs: 0,
+  sm: 0,
+  md: 0,
+  lg: 0,
+  xl: 0
 );
 $container-sizes: (
   xs: 320px,
@@ -81,7 +88,8 @@ $colors: (
   black:      #111,
   white:      #FFF,
 
-  gray:       #BCBFC5,
+  gray:       #707070,
+  // gray:       #BCBFC5,
   gray-10:    #FAFAFA,
   gray-30:    #E7E7E7,
   gray-70:    #707070,

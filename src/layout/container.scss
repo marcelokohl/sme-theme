@@ -5,8 +5,8 @@
   max-width: container-size(xl);
   width: 100%;
 
-  @each $name, $value in $breakpoint-sizes {
-    @include media-breakpoint($name) {
+  @each $name, $value in $container-sizes {
+    @include media-breakpoint-min($name) {
       max-width: $value;
     };
   };

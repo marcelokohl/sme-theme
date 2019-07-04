@@ -1,7 +1,8 @@
 @import "../variables.scss";
 
 .Tabs {
-  border-bottom: color(gray-80) 1px solid;
+  border-bottom: color(gray) 1px solid;
+  margin-bottom: space-size(md);
   .Button {
     background: transparent;
     border: 0;

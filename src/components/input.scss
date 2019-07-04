@@ -2,7 +2,7 @@
 
 
 [class*="Input-"] {
-  margin-bottom: 16px;
+  margin-bottom: space-size(md);
   &.error {
     label, .error {
       color: color(red);
@@ -29,11 +29,15 @@
     font-size: 18px;
     line-height: 22px;
   }
-  label, .help {
+  label {
+    margin-bottom: space-size(sm);
     font-style: normal;
     font-weight: bold;
     display: block;
 
+    color: color(gray-70);
+  }
+  .help {
     color: color(gray-70);
   }
 }

@@ -1,7 +1,12 @@
 @import "../variables.scss";
 
-
-.Menu {
+.Menubar {
+  position: fixed;
+  top: 0;
+  width: 260px;
+  bottom: 0;
+  left: 0;
+  border-right: 1px solid color(gray);
   .menu-content {
     .Button {
       background: transparent;
@@ -29,6 +34,20 @@
     bottom: 0;
     left: -100vw;
     z-index: 200;
-    transition: .3s;
+    // transition: .3s;
   };
+}
+
+
+.menubar-side {
+  margin-left: 300px;
+  @include media-breakpoint-max(md) {
+    margin-left: 0;
+  }
+}
+.menubar-button {
+  visibility: hidden!important;
+  @include media-breakpoint-max(md) {
+    visibility: visible!important;
+  }
 }

@@ -5,7 +5,6 @@ import Image from "./components/image";
 import Icon from "./components/icon";
 import Input from "./components/input";
 import Bg from "./components/bg";
-import Alert from "./components/alert";
 import Card from "./components/card";
 import Progress from "./components/progress";
 import Divider from "./components/divider";
@@ -20,12 +19,13 @@ import Page from "./layout/page";
 import Cell from "./layout/cell";
 import Grid from "./layout/grid";
 import Table from "./layout/table";
-import Modal from "./layout/modal";
 import Template from "./layout/template";
 import Wrap from "./layout/wrap";
 
+import Alert from "./modules/alert";
+import Modal from "./modules/modal";
 import Navbar from "./modules/navbar";
-import Menu from "./modules/menu";
+import Menubar from "./modules/menubar";
 import Titlebar from "./modules/titlebar";
 import Pagination from "./modules/pagination";
 
@@ -34,7 +34,7 @@ export {
   Title,
   Button,
   Navbar,
-  Menu,
+  Menubar,
   Breadcrumb,
   Card,
   Titlebar,

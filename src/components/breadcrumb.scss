@@ -2,6 +2,7 @@
 
 
 .Breadcrumb {
+  margin-bottom: space-size(md);
   .Button, .Text {
     @include reset();
     margin-right: space-size(md)*2;

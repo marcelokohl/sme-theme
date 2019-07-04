@@ -3,24 +3,22 @@
 
 .Table {
   width: 100%;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 10px;
-  line-height: 12px;
-  // text-align: center;
-  letter-spacing: 0.1em;
   text-align: left;
-
+  border-collapse: collapse;
   tr {
     border-bottom: 1px solid #252525;
   }
   th {
     padding: 20px 0;
   }
-
-  tbody {
+  thead {
     th {
-      font-weight: normal;
+      border-bottom: 1px solid color(white);
+    }
+  }
+  tbody {
+    th, td {
+      border-bottom: 1px solid color(gray);
     }
   }
 }

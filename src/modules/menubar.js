@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, Button, Template, Container, Icon, Titlebar, Image } from "../../../../_temp/sme-theme/src/index.js"
 
-class Menu extends Component {
+class Menubar extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,15 +15,16 @@ class Menu extends Component {
     this.setState({show: false})
   }
   render() {
-    const { children, className } = this.props;
-    let c = "Menu" + (className?' '+className:'');
+    const { children, className, collapse, header } = this.props;
+    let c = "Menubar" + (className?' '+className:'');
+    if (collapse) {
+      c += " collapse-"+collapse
+    }
     return (
       <div className={this.state.show?c + ' show':c}>
-        <Titlebar>
-          <Container className="max-w-xs pr">
-            <Image src="images/logo.svg" />
-          </Container>
-        </Titlebar>
+        <header>
+          {header}
+        </header>
         <nav className="menu-content">
           <Container className="max-w-xs pr">
             {children}
@@ -34,4 +35,4 @@ class Menu extends Component {
   };
 };
 
-export default Menu;
+export default Menubar;
