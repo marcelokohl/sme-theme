@@ -1,0 +1,13 @@
+.Page {
+  &.footer {
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 50px;
+  }
+  .page-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}

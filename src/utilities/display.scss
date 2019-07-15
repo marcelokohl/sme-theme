@@ -1,0 +1,50 @@
+.d-block, .block {
+  display: block!important;
+  width: 100%;
+}
+.inline {
+  display: inline-block!important;
+}
+
+[class*="flex-"], .flex {
+  display: flex!important;
+}
+.flex-center {
+  align-items: center!important;
+  justify-content: center!important;
+}
+.flex-align-center {
+  align-items: center!important;
+}
+.flex-justify-center {
+  justify-content: center!important;
+}
+.flex-column {
+  flex-direction: column!important;
+}
+.flex-row {
+  flex-direction: row!important;
+}
+
+@each $name, $value in $container-sizes {
+  @include media-breakpoint-max($name) {
+    .hide-max-#{$name} {
+      visibility: hidden!important;
+    }
+  };
+  @include media-breakpoint-min($name) {
+    .hide-min-#{$name} {
+      visibility: hidden!important;
+    }
+  };
+  @include media-breakpoint-max($name) {
+    .show-max-#{$name} {
+      visibility: visible!important;
+    }
+  };
+  @include media-breakpoint-min($name) {
+    .show-min-#{$name} {
+      visibility: visible!important;
+    }
+  };
+};

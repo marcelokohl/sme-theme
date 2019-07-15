@@ -1,0 +1,20 @@
+.Breadcrumb {
+  margin-bottom: space-size(md);
+  .Button, .Text {
+    @include reset();
+    margin-right: space-size(md)*2;
+    font-size: font-size(md);
+    position: relative;
+    color: $font-color-breadcrumb;
+
+    &:after {
+      font-family: $font-family-breadcrumb-divider;
+      content: $content-breadcrumb-divider;
+      position: absolute;
+      right: -(space-size(md)+(font-size(md)/2));
+    }
+  }
+  &>*:last-child:after {
+    content: initial;
+  }
+}

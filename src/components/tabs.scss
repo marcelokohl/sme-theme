@@ -1,0 +1,18 @@
+@import "../variables.scss";
+
+.Tabs {
+  border-bottom: color(gray) 1px solid;
+  margin-bottom: space-size(md);
+  .Button {
+    background: transparent;
+    border: 0;
+    padding: space-size(md) 0;
+    margin-right: space-size(md);
+    color: $text-color;
+    font-size: $font-size;
+
+    &.active {
+      color: color(primary);
+    }
+  }
+}

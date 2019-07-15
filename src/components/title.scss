@@ -1,0 +1,46 @@
+@import "../variables.scss";
+
+
+.Title {
+  font-family: $font-family-title;
+  margin: 0;
+  padding: 0;
+  margin-bottom: space-size(md);
+  font-size: title-size(md);
+  font-weight: bold;
+  line-height: 1.1em;
+
+  @each $name, $value in $title-sizes {
+    &.#{$name} {
+      font-size: $value!important;
+    }
+  }
+  @each $name, $value in $colors {
+    &.#{$name} {
+      color: $value;
+    }
+  }
+  &.center {
+    text-align: center;
+  }
+  &.left {
+    text-align: left;
+  }
+  &.right {
+    text-align: right;
+  }
+  &.uppercase {
+    text-transform: uppercase;
+  }
+
+  &.outline {
+    -webkit-text-stroke: .03em $text-color;
+    color: transparent;
+    text-transform: uppercase;
+    @each $name, $value in $colors {
+      &.#{$name} {
+        -webkit-text-stroke-color: $value;
+      }
+    }
+  }
+}

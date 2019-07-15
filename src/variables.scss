@@ -1,41 +1,143 @@
-$sizes: (
-  0: 0px,
-  1: 6px,
-  2: 10px,
-  3: 12px,
-  4: 18px,
-  5: 24px
-);
+@import "functions.scss";
+@import "mixins.scss";
+
+$space-sizes:(
+  0: 0,
+  xs: .23rem,
+  sm: .5rem,
+  md: 1rem,
+  lg: 1.5rem,
+  xl: 3rem
+)!default;
+$text-sizes: (
+  xs: .7rem,
+  sm: .83rem,
+  md: 1rem,
+  lg: 1.5rem,
+  xl: 2.1rem
+)!default;
+$title-sizes: (
+  xs: 1.2rem,
+  sm: 1.33rem,
+  md: 2.16rem,
+  lg: 4.1rem,
+  xl: 5rem
+)!default;
+$button-sizes: (
+  xs: .8rem,
+  sm: 1rem,
+  md: 1.2rem,
+  lg: 2rem,
+  xl: 3rem
+)!default;
+$form-sizes: (
+  xs: 1.2rem,
+  sm: 1.5rem,
+  md: 2.16rem,
+  lg: 4.1rem,
+  xl: 5rem
+)!default;
+$icon-sizes: (
+  xs: 12px,
+  sm: 16px,
+  md: 24px,
+  lg: 32px,
+  xl: 64px
+)!default;
+$image-sizes: (
+  xs: 50px,
+  sm: 120px,
+  md: 200px,
+  lg: 400px,
+  xl: 500px
+)!default;
+$container-sizes: (
+  xs: 320px,
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+)!default;
+$breakpoint-sizes: (
+  xl: 1200px,
+  lg: 992px,
+  md: 768px,
+  sm: 576px,
+  xs: 0,
+)!default;
+
 $colors: (
-  red: #FF2640,
-  black: #111,
-  gray: #BCBFC5,
-  gray-30: #E7E7E7,
-  gray-10: #FAFAFA,
-  white: #FFF,
-);
-$spacers: (
-  0: 0px,
-  1: 6px,
-  2: 10px,
-  3: 12px,
-  4: 18px,
-  5: 30px
-);
-$container-max-widths: (
-  xxs: 320px,
-  xs: 340px,
-  sm: 540px,
-  md: 560px,
-  lg: 960px,
-  xl: 1140px
-);
-$grid-breakpoints: (
-  xxs: 0,
-  xs: 340px,
-  sm: 540px,
-  md: 560px,
-  lg: 960px,
-  xl: 1140px
-);
-$desktop-bar-height: 34px;
+  primary:    #E0F900,
+  default:    #E0F900,
+  muted:      #505050,
+  error:      #DE1A1A,
+  success:    #99FB00,
+
+  red:        #DE1A1A,
+  orange:     #FF5400,
+  yellow:     #FFAE00,
+  blue:       #6E20E2,
+  green:      #99FB00,
+
+  black:      #111111,
+  white:      #FFFFFF,
+
+  light-gray: #8A8A8A,
+  gray:       #505050,
+  dark-gray:  #3C3C3C,
+
+  transparent: transparent,
+)!default;
+
+$font-family: Montserrat!default;
+//components
+$border-radius: 0px!default;
+$text-color: color(white)!default;
+$text-color-invert: color(black)!default;
+$background-color: color(black)!default;
+$font-size: font-size(md)!default;
+// divider
+$height-divider: 2px!default;
+$background-color-divider: color(white)!default;
+$background-color-divider-invert: color(black)!default;
+
+//modal
+$background-color-modal: color(primary)!default;
+$text-color-modal: color(black)!default;
+$border-radius-modal: 0px!default;
+$width-modal: container-size(md)!default;
+
+//breadcrumb
+$font-color-breadcrumb: color(white)!default;
+$font-family-breadcrumb-divider: $font-family!default;
+$content-breadcrumb-divider: ">"!default;
+
+//input
+$text-color-input: color(white)!default;
+$text-color-input-label: color(light-gray)!default;
+$background-color-input: color(transparent)!default;
+$border-color-input: color(white)!default;
+$font-family-input: $font-family!default;
+$font-family-input-label: $font-family!default;
+$font-size-input: font-size(lg);
+$font-size-input-label: font-size(md);
+
+// button
+$border-radius-button: 0px!default;
+$font-family-button: $font-family!default;
+$border-size-button: 2px!default;
+
+// progress
+$background-color-progress: color(gray)!default;
+$background-color-progress-bar: color(primary)!default;
+
+// FONT FAMILY:
+$font-family-title: $font-family!default;
+$font-family-text: $font-family!default;
+
+// BORDER-SIZE
+
+// grid
+$grid-gutter: 1rem!default;
+$grid-columns: 12!default;
+$grid-max: 1004px!default;

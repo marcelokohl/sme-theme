@@ -1,0 +1,22 @@
+.pr, .relative {
+  position: relative!important;
+}
+.fl {
+  float: left;
+}
+.pa-l, .absolute-left {
+  position: absolute!important;
+  left: 0!important;
+}
+.pa-r, .absolute-right {
+  position: absolute!important;
+  right: 0!important;
+}
+.pa-t, .absolute-top {
+  position: absolute!important;
+  top: 0!important;
+}
+.absolute-bottom {
+  position: absolute!important;
+  bottom: 0!important;
+}

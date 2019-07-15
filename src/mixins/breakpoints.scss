@@ -1,0 +1,17 @@
+// @import "../variables.scss";
+
+@mixin media-breakpoint($name) {
+  @media (max-width: breakpoint-size($name)) {
+    @content;
+  }
+}
+@mixin media-breakpoint-max($name) {
+  @media (max-width: breakpoint-size($name)) {
+    @content;
+  }
+}
+@mixin media-breakpoint-min($name) {
+  @media (min-width: breakpoint-size($name)) {
+    @content;
+  }
+}

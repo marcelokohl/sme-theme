@@ -8,14 +8,26 @@
 
 ...
 Components
-`import Theme, { Text, Button } from "sme-theme"`
+`import { Text, Title, Button, etc... } from "sme-theme"`
 
 CSS
-`require('../node_modules/sme-theme/build/theme.css');`
+In main scss `@import "../node_modules/sme-theme/src/theme.scss";`
 
+Sizes:
 
-`<Text />`
-`<Button />`
+xs, sm, md, lg, xl
+
+`<Text className="" tag="">{children}</Text>`
+
+`<Title className="" tag="">{children}</Title>`
+
+`<Image className="" src=""/>`
+
+`<Icon className="" name=""/>`
+
+`<Button to="RouterLink" plugin={Link} href="" className="" onClick={} target="" active disabled>{children}</Button>`
+
+`<Page name="" loading={}>{children}</Page>`
 
 ### Props
 

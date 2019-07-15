@@ -1,0 +1,24 @@
+@import "../variables.scss";
+
+
+.Table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  tr {
+    border-bottom: 1px solid #252525;
+  }
+  th {
+    padding: 20px 0;
+  }
+  thead {
+    th {
+      border-bottom: 1px solid color(white);
+    }
+  }
+  tbody {
+    th, td {
+      border-bottom: 1px solid color(gray);
+    }
+  }
+}

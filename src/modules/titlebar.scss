@@ -1,0 +1,17 @@
+.Titlebar {
+  border-bottom: 1px solid color(white);
+  padding: 1rem 0;
+  text-align: center;
+  & > .Container {
+    display: flex;
+    justify-content: space-between;
+    // flex-direction: row-reverse;
+    align-items: center;
+    height: 2.9rem;
+
+    & > .Button {
+      position: initial;
+      margin: 0;
+    }
+  }
+}

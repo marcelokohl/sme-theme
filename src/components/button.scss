@@ -1,7 +1,71 @@
 .Button {
-  background-color: red;
+  font-family: $font-family-button;
+  color: color(black);
+  font-size: button-size(md);
+  padding: space-size(md);
+  background: color(default);
+  border: $border-size-button solid color(default);
+  font-style: normal;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: $border-radius-button;
+  text-transform: uppercase;
+  outline: none;
+  cursor: pointer;
+  margin-bottom: space-size(md);
+  line-height: 1.6em;
 
-  &:before {
-    content: '';
+  @each $name, $value in $button-sizes {
+    &.#{$name} {
+      font-size: $value;
+      padding: space-size(#{$name});
+    }
+  }
+  &.rounded {
+    line-height: 0;
+  }
+  &.unset {
+    @include reset();
+  }
+  &.link {
+    @include reset();
+      font-family: $font-family-text;
+    font-size: inherit;
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  &.invert {
+    background-color: color(white);
+    border-color: color(white);
+    color: color(black);
+    &.outline {
+      color: color(white);
+    }
+  }
+  @each $name, $value in $colors {
+    &.#{$name} {
+      background-color: $value;
+      border-color: $value;
+      &.outline {
+        color: $value;
+      }
+    }
+  }
+  @each $name, $value in $colors {
+    &.color-#{$name} {
+      color: $value;
+    }
+  }
+  &.outline {
+    color: color(default);
+    background-color: color(transparent);
+  }
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.5;
   }
 }

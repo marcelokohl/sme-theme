@@ -1,0 +1,20 @@
+@import "../variables.scss";
+
+
+.Alert {
+  padding: space-size(md);
+  border-radius: rounded-size(md);
+  font-size: font-size(md);
+  color: color(white);
+  background-color: color(gray);
+
+  @each $name, $value in $colors {
+    &.#{$name} {
+      background-color: $value;
+    }
+  }
+
+  &.success {
+    color: color(black);
+  }
+}

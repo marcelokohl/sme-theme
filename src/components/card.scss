@@ -1,0 +1,12 @@
+.Card {
+  margin-bottom: space-size(md);
+
+  @each $name, $value in $colors {
+    &.#{$name} {
+      border-radius: rounded-size(md);
+      padding: space-size(md);
+      background-color: $value;
+      border-color: $value;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@import "../variables.scss";
+
+
+.Grid{
+  box-sizing: border-box;
+  margin: 0 (-$grid-gutter);
+  display: flex;
+  
+  &.no-gutter {
+    margin: 0;
+  }
+  // margin: 0 -12px;
+}
+
+.Grid:before, .Grid:after {
+  content: " ";
+  display: table;
+}
+
+.Grid:after {
+  clear: both;
+}

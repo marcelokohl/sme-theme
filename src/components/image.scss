@@ -1,0 +1,37 @@
+.Image {
+  img {
+    max-width: 100%;
+  }
+  &.center {
+    text-align: center;
+  }
+  &.rounded {
+    border-radius: 100%;
+    overflow: hidden;
+    display: block;
+    object-fit: cover;
+    @include aspect-ratio(1,1);
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      @include position-abslute();
+    }
+  }
+  @each $name, $value in $image-sizes {
+    &.#{$name} {
+      overflow: hidden;
+      display: block;
+      object-fit: cover;
+      @include aspect-ratio(1,1);
+      img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        @include position-abslute();
+      }
+      width: $value!important;
+      height: $value!important;
+    }
+  }
+}

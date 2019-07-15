@@ -1,0 +1,15 @@
+@each $label, $color in $colors {
+  .text-#{$label} {
+    color: $color!important;
+  }
+}
+@each $label, $color in $colors {
+  .bg-#{$label} {
+    background-color: $color!important;
+  }
+}
+@each $label, $color in $colors {
+  .border-#{$label} {
+    border: $color!important;
+  }
+}
