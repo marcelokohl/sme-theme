@@ -34,4 +34,14 @@
       height: $value!important;
     }
   }
+  @each $name, $value in $image-sizes {
+    &.w-#{$name} {
+      width: $value!important;
+    }
+  }
+  @each $name, $value in $image-sizes {
+    &.h-#{$name} {
+      height: $value!important;
+    }
+  }
 }

@@ -1,6 +1,6 @@
 {
   "name": "sme-theme",
-  "version": "1.0.5",
+  "version": "1.0.9",
   "description": "SME Theme",
   "main": "build/index.js",
   "author": {
@@ -19,9 +19,6 @@
   },
   "license": "ISC",
   "dependencies": {
-    "react-input-mask": "^2.0.4",
-    "react-router-dom": "^5.0.1",
-    "react-text-mask": "^5.4.3",
     "webpack": "^4.12.0"
   },
   "devDependencies": {

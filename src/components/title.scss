@@ -9,7 +9,8 @@
   font-size: title-size(md);
   font-weight: bold;
   line-height: 1.1em;
-
+  display: flex;
+  
   @each $name, $value in $title-sizes {
     &.#{$name} {
       font-size: $value!important;

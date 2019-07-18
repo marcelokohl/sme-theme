@@ -1,12 +1,15 @@
 @import "../variables.scss";
 
-
 .Alert {
   padding: space-size(md);
   border-radius: rounded-size(md);
   font-size: font-size(md);
-  color: color(white);
+  color: color(black);
   background-color: color(gray);
+
+  .Icon, .Title, .Text {
+    color: color(black);
+  }
 
   @each $name, $value in $colors {
     &.#{$name} {
@@ -14,7 +17,7 @@
     }
   }
 
-  &.success {
-    color: color(black);
-  }
+  // &.success {
+  //   color: color(black);
+  // }
 }

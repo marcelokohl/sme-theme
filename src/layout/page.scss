@@ -10,4 +10,15 @@
     left: 0;
     right: 0;
   }
+  &.loading:after {
+    content: "Carregando...";
+    color: color(white);
+    @include position(fixed,0,0,0,0);
+    z-index: 1000;
+    background-color: color(black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: font-size(lg);
+  }
 }

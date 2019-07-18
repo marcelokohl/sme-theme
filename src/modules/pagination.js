@@ -12,14 +12,14 @@ class Pagination extends Component {
   }
 
   buttonClass(i) {
-    return this.state.page===i?'rounded':'rounded transparent color-white'
+    return this.state.page===i?'active':''
   }
 
   createLeft() {
-    return <Button className="rounded transparent" onClick={() => this.prevPage()}><Icon name="arrow-left"/></Button>
+    return <Button onClick={() => this.prevPage()}><Icon name="arrow-left"/></Button>
   }
   createRight() {
-    return <Button className="rounded transparent" onClick={() => this.nextPage()}><Icon name="arrow-right"/></Button>
+    return <Button onClick={() => this.nextPage()}><Icon name="arrow-right"/></Button>
   }
 
   createFirst() {
@@ -71,7 +71,11 @@ class Pagination extends Component {
     const { children, className, page } = this.props;
     let c = "Pagination" + (className?' '+className:'');
     if (this.state.size < this.state.step * 2 + 6) {
-      return this.createList(1, this.state.size + 1);
+      return (
+        <div className={c}>
+          {this.createList(1, this.state.size + 1)}
+        </div>
+      );
     }
     else if (this.state.page < this.state.step * 2 + 1) {
       return (

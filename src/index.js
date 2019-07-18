@@ -15,6 +15,7 @@ import Tab from "./components/tab";
 import Slider from "./components/slider";
 import Slide from "./components/slide";
 import Breadcrumb from "./components/breadcrumb";
+import Form from "./components/form";
 
 import Container from "./layout/container";
 import Page from "./layout/page";
@@ -35,6 +36,7 @@ export {
   Text,
   Title,
   Button,
+  Form,
   Slider,
   Slide,
   Navbar,

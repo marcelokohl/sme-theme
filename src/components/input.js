@@ -10,6 +10,18 @@ class Input extends React.Component {
       fileName : ''
     }
   }
+  onInputChange(e) {
+    if (this.props.onChange) {
+      this.props.onChange(e)
+    }
+  }
+  onTextareaChange(e) {
+    if (this.props.onChange) {
+      this.props.onChange(e)
+    }
+    e.target.style.height = 'auto'
+    e.target.style.height = e.target.scrollHeight + 'px'
+  }
   componentDidMount() {
     if (this.props.focus) {
       this.refs.field.focus();
@@ -26,6 +38,7 @@ class Input extends React.Component {
       mask,
       options,
       className,
+      name,
       imageSrc,
       imageClass,
       buttonClass,
@@ -33,10 +46,14 @@ class Input extends React.Component {
       helpText,
       errorText,
       focus,
-      plugin
+      plugin,
+      disabled
     } = this.props;
 
     let c = "Input-"+ type + " " + (className?" "+className:'');
+    if (disabled) {
+      c += ' disabled'
+    }
     let html = [];
     if (type == 'image') {
       html.push (
@@ -45,7 +62,7 @@ class Input extends React.Component {
             <Image className={imageClass} src={this.state.fileSrc || imageSrc} />
           </Template>
           <Button className={buttonClass}>Editar</Button>
-          <input ref="field" onChange={e =>{this.setState({fileSrc:URL.createObjectURL(e.target.files[0])});this.props.onChange(e)}} type="file" accept="image/*"/>
+          <input disabled={disabled} ref="field" onChange={e =>{this.setState({fileSrc:URL.createObjectURL(e.target.files[0])});this.onInputChange(e)}} type="file" accept="image/*"/>
         </Template>
       )
     }
@@ -53,22 +70,29 @@ class Input extends React.Component {
       html.push (
         <Template key={this.genKey()}>
           <Text>{this.state.fileName}</Text>
-          <input ref="field" onChange={e =>{this.setState({fileName:e.target.files[0].name});this.props.onChange(e)}} type="file" accept="*"/>
-          <Button>Upload</Button>
+          <input disabled={disabled} ref="field" onChange={e =>{this.setState({fileName:e.target.files[0].name});this.onInputChange(e)}} type="file" accept="*"/>
+          <Button className={buttonClass}>Upload</Button>
         </Template>
       )
     }
     else if (mask) {
       let InputMask = plugin
       html.push (
-        <InputMask key={this.genKey()} ref="field" mask={mask} onChange={e => this.props.onChange(e)} value={this.props.value} type={this.props.type} />
+        <InputMask disabled={disabled} key={this.genKey()} ref="field" mask={mask} onChange={e => this.onInputChange(e)} value={this.props.value} type={this.props.type} />
       );
     }
     else if (type == 'switch') {
       html.push (
         <Template key={this.genKey()}>
-          <input ref="field" type="checkbox"/>
+          <input checked={this.props.value} onChange={e => this.onInputChange(e)} disabled={disabled} ref="field" type="checkbox"/>
           <span></span>
+        </Template>
+      )
+    }
+    else if (type == 'textarea') {
+      html.push (
+        <Template key={this.genKey()}>
+          <textarea onChange={e => this.onTextareaChange(e)}></textarea>
         </Template>
       )
     }
@@ -81,7 +105,7 @@ class Input extends React.Component {
       }
       html.push (
         <Template key={this.genKey()}>
-          <select ref="field" name={this.props.name} onChange={e => this.props.onChange(e)} value={this.props.value}>
+          <select disabled={disabled} ref="field" name={this.props.name} onChange={e => this.onInputChange(e)} value={this.props.value}>
             <option>--select--</option> {/* @Kohl eu adicionei esse option. (quando seleciona a cidade Brasília, o input nao pega o value do select, talvez pq só fica uma única opção pra selecionar). */ }
             {htmlOptions}
           </select>
@@ -91,7 +115,7 @@ class Input extends React.Component {
     else {
       html.push (
         <Template key={this.genKey()}>
-          <input id={id} key={'1'} ref="field" type={type} onChange={e => this.props.onChange(e)} value={this.props.value} />
+          <input name={name} disabled={disabled} id={id} key={'1'} ref="field" type={type} onChange={e => this.onInputChange(e)} value={this.props.value} />
         </Template>
       );
     }
@@ -99,7 +123,9 @@ class Input extends React.Component {
     return (
       <div className={c}>
         <label className="Text" htmlFor={id}>{children}</label>
-        {html}
+        <Template condition={type != 'label'}>
+          {html}
+        </Template>
         <Template condition={helpText != ''}>
           <Text className="help">{helpText}</Text>
         </Template>
@@ -116,6 +142,7 @@ class Input extends React.Component {
 Input.defaultProps = {
   type: 'text',
   focus: false,
+  disabled: false,
   children: '',
   // value:'',
   options:[],
@@ -125,82 +152,7 @@ Input.defaultProps = {
   helpText: '',
   imageClass: '',
   errorText: '',
-  onChange: () => {}
+  onChange: false
 };
 
 export default Input;
-
-
-/*----------*/
-
-
-//
-// const Campo = props => {
-//   const { children, label, className, errorText } = props;
-//   return (
-//     <div className={className}>
-//       <label>{label}</label>
-//       {children}
-//       <Template condition={errorText != undefined}>
-//         <span className="error">{errorText}</span>
-//       </Template>
-//     </div>
-//   );
-// };
-//
-// const Input = props => {
-//   const { children, type, className, srcImg, mask, list } = props;
-//   let c = "Input-"+ type + " " + (className?" "+className:'');
-//   const [srcImage, setSrcImage] = useState(srcImg) // Kohl Aqui seto o src da imagem q vem do form em srcImage
-//
-//   let html = [];
-//
-//   if (type == 'image') {
-//     html.push (
-//       <div className={c}>
-//         <div className="Image rounded image-sm border mx-auto">
-//           <img id="myImg" src={srcImage ? srcImage : srcImg} />
-//         </div>
-//         <div className="Text mt-1">Editar</div>
-//         <input onChange={(e)=>{setSrcImage(URL.createObjectURL(e.target.files[0]));props.onChange(e);}} className="form-file-image" type="file" name="myImage" accept="image/*"/>
-//       </div>
-//     )
-//
-//   } else if (type == 'select') {
-//     let html_list = []
-//     if (list.length) {
-//       for (var i = 0; i < list.length; i++) {
-//         html_list.push(<option value={list[i].value} key={i}>{list[i].label}</option>);
-//       }
-//     }
-//     html.push (
-//       <Campo className={c} label={props.label} key={props.input} errorText={props.errorText}>
-//         <select name={props.name} onChange={e => props.input.onChange(e)} value={props.input.value}>
-//           <option /> {/* @Kohl eu adicionei esse option. (quando seleciona a cidade Brasília, o input nao pega o value do select, talvez pq só fica uma única opção pra selecionar). */ }
-//           {html_list}
-//         </select>
-//       </Campo>
-//     )
-//
-//   } else if (mask) {
-//     html.push (
-//       <Campo className={c} label={children} key={props.input} errorText={props.errorText}> { /* @Kohl tive q adicionar a key. (o react tava alertando q n tinha uma key.) */ }
-//         <InputMask mask={mask} onChange={e => props.input.onChange(e)} value={props.input.value} type={props.type} />
-//       </Campo>
-//     );
-//   } else {
-//     html.push (
-//       <Campo className={c} label={children} key={props.input} errorText={props.errorText}> { /* @kohl passei o input qui pra key tbm */ }
-//         <input type={type} onChange={e => props.input.onChange(e)} value={props.input.value} />
-//       </Campo>
-//     );
-//   }
-//   return html;
-// };
-//
-// Input.defaultProps = {
-//   type: 'text',
-//   list: []
-// };
-//
-// export default Input;
