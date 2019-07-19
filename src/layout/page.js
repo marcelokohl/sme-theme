@@ -1,25 +1,43 @@
 import React from "react";
-// import { Container } from "../index.js"
 
-const Page = props => {
-  const { children, name, className, loading, footer } = props;
-  let c = "Page page-" + name + " " + (className?className:'');
-  if (footer) {
-    c += " footer"
+class Page extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {title : document.title}
   }
-  if (loading) {
-    c += " loading"
+  componentDidMount() {
+    if (this.props.title) {
+      document.title = this.props.title
+    } else {
+      document.title = this.state.title
+    }
   }
-  return (
-    <div className={c}>
-    {children}
-    <footer className="page-footer">{footer}</footer>
-    </div>
-  );
+  render() {
+    if (this.props.hide) return null
+
+    const { children, name, className, loading, footer, title } = this.props
+    let c = "Page"
+
+    if (footer) c += " footer"
+    if (className) c += " "+className
+    if (loading) c += " loading"
+    if (name) c += " page-"+name
+
+    return (
+      <div className={c}>
+      {children}
+      {footer &&
+        <footer className="page-footer">{footer}</footer>
+      }
+      </div>
+    );
+
+  }
 };
 
 Page.defaultProps = {
-  footer: undefined
+  footer: undefined,
+  title: undefined
 };
 
 export default Page;

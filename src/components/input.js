@@ -19,8 +19,8 @@ class Input extends React.Component {
     if (this.props.onChange) {
       this.props.onChange(e)
     }
-    e.target.style.height = 'auto'
-    e.target.style.height = e.target.scrollHeight + 'px'
+    // e.target.style.height = 'auto'
+    // e.target.style.height = e.target.scrollHeight + 'px'
   }
   componentDidMount() {
     if (this.props.focus) {
@@ -28,6 +28,8 @@ class Input extends React.Component {
     }
   }
   genKey() {
+    // return Math.random()
+    return 1;
     // return Math.random().toString(36).replace(/[^a-z]+/g, '').substr(2, 10);
   }
   render() {
@@ -92,7 +94,7 @@ class Input extends React.Component {
     else if (type == 'textarea') {
       html.push (
         <Template key={this.genKey()}>
-          <textarea onChange={e => this.onTextareaChange(e)}></textarea>
+          <textarea onChange={e => this.onTextareaChange(e)}>{this.props.value}</textarea>
         </Template>
       )
     }
@@ -112,10 +114,17 @@ class Input extends React.Component {
         </Template>
       )
     }
+    else if(type === 'checkbox' || type === 'radio') {
+      html.push (
+        <Template key={this.genKey()}>
+          <input value={this.props.value} checked={this.props.checked} name={name} disabled={disabled} id={id} ref="field" type={type} onChange={e => this.onInputChange(e)} />
+        </Template>
+      );
+    }
     else {
       html.push (
         <Template key={this.genKey()}>
-          <input name={name} disabled={disabled} id={id} key={'1'} ref="field" type={type} onChange={e => this.onInputChange(e)} value={this.props.value} />
+          <input name={name} disabled={disabled} id={id} ref="field" type={type} onChange={e => this.onInputChange(e)} value={this.props.value} />
         </Template>
       );
     }

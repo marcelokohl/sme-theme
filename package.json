@@ -1,6 +1,6 @@
 {
   "name": "sme-theme",
-  "version": "1.0.9",
+  "version": "1.0.13",
   "description": "SME Theme",
   "main": "build/index.js",
   "author": {

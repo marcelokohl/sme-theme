@@ -12,7 +12,7 @@ class Pagination extends Component {
   }
 
   buttonClass(i) {
-    return this.state.page===i?'active':''
+    return this.state.page === i ? 'active':''
   }
 
   createLeft() {
@@ -25,7 +25,7 @@ class Pagination extends Component {
   createFirst() {
     return (
       <Fragment>
-        <Button className={this.buttonClass(1)} onClick={(e) => this.changePage(e,1)}>1</Button>
+        <Button className={this.buttonClass(1)} onClick={(e) => this.changePage(e)}>1</Button>
         <Text tag="span">...</Text>
       </Fragment>
     )
@@ -33,7 +33,7 @@ class Pagination extends Component {
   createList(s, f) {
     let html =[]
     for (var i = s; i < f; i++) {
-      html.push(<Button className={this.buttonClass(i)} onClick={(e) => this.changePage(e,i)} key={i}>{i}</Button>);
+      html.push(<Button className={this.buttonClass(i)} onClick={(e) => this.changePage(e)} key={i}>{i}</Button>);
     }
     return html
   }
@@ -41,13 +41,13 @@ class Pagination extends Component {
     return (
       <Fragment>
         <Text tag="span">...</Text>
-        <Button className={this.buttonClass(this.state.size)} onClick={(e) => this.changePage(e,this.state.size)}>{this.state.size}</Button>
+        <Button className={this.buttonClass(this.state.size)} onClick={(e) => this.changePage(e)}>{this.state.size}</Button>
       </Fragment>
     )
   }
 
-  changePage(el, page) {
-    this.setState({page: Number(el.target.innerHTML)})
+  changePage(e) {
+    this.setState({page: Number(e.target.innerHTML)})
   }
 
   prevPage() {

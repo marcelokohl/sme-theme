@@ -15,6 +15,7 @@
   cursor: pointer;
   margin-bottom: space-size(md);
   line-height: 1em;
+  display: inline-block;
 
   @each $name, $value in $button-sizes {
     &.#{$name} {
@@ -36,6 +37,9 @@
     font-weight: inherit;
     text-decoration: underline;
     cursor: pointer;
+    &.active {
+      color: color(primary);
+    }
   }
 
   &.invert {
