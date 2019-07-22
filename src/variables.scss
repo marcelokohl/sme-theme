@@ -52,7 +52,7 @@ $image-sizes: (
   xl: 500px
 )!default;
 $container-sizes: (
-  xs: 320px,
+  xs: 360px,
   sm: 540px,
   md: 720px,
   lg: 960px,
@@ -114,9 +114,11 @@ $content-breadcrumb-divider: ">"!default;
 
 //input
 $text-color-input: color(white)!default;
+$text-invert-color-input: color(black)!default;
 $text-color-input-label: color(light-gray)!default;
 $background-color-input: color(transparent)!default;
 $border-color-input: color(white)!default;
+$border-invert-color-input: color(black)!default;
 $font-family-input: $font-family!default;
 $font-family-input-label: $font-family!default;
 $font-size-input: font-size(lg);

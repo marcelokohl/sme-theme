@@ -94,7 +94,7 @@ class Input extends React.Component {
     else if (type == 'textarea') {
       html.push (
         <Template key={this.genKey()}>
-          <textarea onChange={e => this.onTextareaChange(e)}>{this.props.value}</textarea>
+          <textarea onChange={e => this.onTextareaChange(e)} value={this.props.value}></textarea>
         </Template>
       )
     }

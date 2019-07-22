@@ -6,10 +6,9 @@ class Page extends React.Component {
     this.state = {title : document.title}
   }
   componentDidMount() {
+    document.title = this.state.title
     if (this.props.title) {
       document.title = this.props.title
-    } else {
-      document.title = this.state.title
     }
   }
   render() {

@@ -10,7 +10,7 @@
   font-weight: bold;
   line-height: 1.1em;
   display: flex;
-  
+
   @each $name, $value in $title-sizes {
     &.#{$name} {
       font-size: $value!important;
@@ -21,8 +21,14 @@
       color: $value;
     }
   }
+  &.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   &.center {
     text-align: center;
+    justify-content: center;
   }
   &.left {
     text-align: left;
@@ -35,7 +41,7 @@
   }
 
   &.outline {
-    -webkit-text-stroke: .03em $text-color;
+    -webkit-text-stroke: .045em $text-color;
     color: transparent;
     text-transform: uppercase;
     @each $name, $value in $colors {

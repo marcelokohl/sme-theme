@@ -16,8 +16,12 @@
     background-color: $background-color-modal;
     padding: space-size(xl);
     border-radius: $border-radius-modal;
-    .Text, .Title {
+    .Text, .Title, .Icon {
       color:$text-color-modal;
+      &.outline {
+        color: transparent;
+        -webkit-text-stroke-color:$text-color-modal;
+      }
     }
   }
   &.show {

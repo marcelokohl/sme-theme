@@ -1,5 +1,7 @@
 .Card {
+  padding-bottom: space-size(md);
   margin-bottom: space-size(md);
+  border-bottom: 1px solid color(dark-gray);
 
   @each $name, $value in $colors {
     &.#{$name} {

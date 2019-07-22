@@ -50,7 +50,16 @@
     margin-top: space-size(xs);
     color: $text-color-input-label;
   }
+
+  &.invert {
+    input, select, textarea {
+      color: $text-invert-color-input;
+      border-color: $border-invert-color-input;
+    }
+  }
 }
+
+
 
 .Input-select {
   select {

@@ -16,6 +16,11 @@
       color: $value;
     }
   }
+  &.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   &.center {
     text-align: center;
   }
