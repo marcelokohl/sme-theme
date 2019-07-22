@@ -11,11 +11,15 @@
   visibility: hidden;
   background-color: rgba(0,0,0,.7);
   z-index: 100;
+  opacity: 0;
+  transition: .3s;
   .modal-inner {
     width: 100%;
     background-color: $background-color-modal;
     padding: space-size(xl);
     border-radius: $border-radius-modal;
+    transform: translateY(100%);
+    transition: .3s;
     .Text, .Title, .Icon {
       color:$text-color-modal;
       &.outline {
@@ -26,6 +30,10 @@
   }
   &.show {
     visibility: visible;
+    opacity: 1;
+    .modal-inner {
+      transform: translateY(0%);
+    }
   }
 
 
