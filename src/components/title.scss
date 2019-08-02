@@ -8,8 +8,9 @@
   margin-bottom: space-size(md);
   font-size: title-size(md);
   font-weight: bold;
-  line-height: 1.1em;
-  display: flex;
+  line-height: 1.4em;
+  // display: flex;
+  // align-items: center;
 
   @each $name, $value in $title-sizes {
     &.#{$name} {

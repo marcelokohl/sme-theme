@@ -1,4 +1,7 @@
 .Button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   font-family: $font-family-button;
   color: color(black);
   font-size: button-size(md);
@@ -22,6 +25,10 @@
       font-size: $value;
       padding: space-size(#{$name}) space-size(#{$name})*3;
     }
+  }
+  &.block {
+    padding-left: 0;
+    padding-right: 0;
   }
   &.rounded {
     line-height: 0;
@@ -57,6 +64,11 @@
       &.outline {
         color: $value;
       }
+
+      &.loading {
+        background-color: rgba($value, .4);
+        border-color: rgba($value, .4);
+      }
     }
   }
   @each $name, $value in $colors {
@@ -67,9 +79,17 @@
   &.outline {
     color: color(default);
     background-color: color(transparent);
+
+    &.loading {
+      background-color: color(transparent);
+    }
   }
-  &.disabled {
-    pointer-events: none;
-    opacity: 0.5;
+  &.loading {
+    opacity: 1;
+    background-color: rgba(color(default), .4);
+    border-color: rgba(color(default), 0);
+  }
+  .Spinner {
+    font-size: 2em;
   }
 }

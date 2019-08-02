@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Spinner } from "../index.js"
 
 const Button = props => {
   const { children, to, href, className, target, active, disabled, plugin, ga, loading } = props;
@@ -21,7 +21,7 @@ const Button = props => {
   } else {
     return (
       <button disabled={disabled || loading} className={c} onClick={onClick}>
-        {loading && 'Loading...'}
+        {loading && <Spinner />}
         {!loading && children}
       </button>
     );

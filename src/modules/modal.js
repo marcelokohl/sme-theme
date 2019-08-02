@@ -5,26 +5,31 @@ class Modal extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      show: false
+      show: false,
+      hidden: true
     }
   }
   show() {
     this.setState({show: true})
+    this.setState({hidden: false})
   }
   hide() {
     this.setState({show: false})
+    var t = this
+    setTimeout(function() {
+      t.setState({hidden: true})
+    }, 400)
   }
 
   render() {
-    // const { children, name, className } = this.props;
-    let c = "Modal " + (this.state.show?'show':' ') + (this.props.className?this.props.className:'');
+    let c = "Modal" + (this.state.show?' show ':' ') + (this.props.className?this.props.className:'');
     return (
       <div className={c}>
         <div className="modal-inner">
           <Container className="center">
-            {this.props.children}
+            {!this.state.hidden && this.props.children}
             <Template condition={this.props.close}>
-              <Button className="block outline black mt-lg mb-0 max-w-xs mx-auto" onClick={() => {this.setState({show: false})}}>Fechar</Button>
+              <Button className="block outline black mt-lg mb-0 max-w-xs mx-auto" onClick={() => {this.hide()}}>Fechar</Button>
             </Template>
           </Container>
         </div>

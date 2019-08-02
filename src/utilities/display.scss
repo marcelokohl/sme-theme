@@ -5,7 +5,10 @@
 .inline {
   display: inline-block!important;
 }
-
+.disabled {
+  opacity: .4;
+  pointer-events: none;
+}
 [class*="flex-"], .flex {
   display: flex!important;
 }

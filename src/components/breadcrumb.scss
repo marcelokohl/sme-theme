@@ -13,6 +13,14 @@
       content: $content-breadcrumb-divider;
       position: absolute;
       right: -(space-size(md));
+      pointer-events: none;
+    }
+
+  }
+  .Button:hover {
+    color: color(primary);
+    &:after {
+      color: $font-color-breadcrumb;
     }
   }
   &>*:last-child:after {

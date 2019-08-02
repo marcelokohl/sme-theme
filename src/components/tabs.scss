@@ -1,7 +1,7 @@
 @import "../variables.scss";
 
 .Tabs {
-  border-bottom: color(gray) 1px solid;
+  border-bottom: color(white) 2px solid;
   margin-bottom: space-size(md);
   .Button {
     background: transparent;
@@ -17,7 +17,7 @@
     margin-right: space-size(xl);
     padding-bottom: space-size(md);
 
-    &.active {
+    &.active, &:hover {
       color: color(primary);
     }
   }

@@ -8,15 +8,26 @@ class Slider extends Component {
       end: false
     }
   }
-  next() {
-    this.setState({slide: this.state.slide+1})
-  }
-  prev() {
-    this.setState({slide: this.state.slide-1})
+  // go(i) {
+  //   this.setState({'slide': i})
+  //   // this.props.onChange(this.state.slide)
+  // }
+  // next() {
+  //   this.props.onChange(this.state.slide+1)
+  //   // this.setState({'slide': this.state.slide+1})
+  // }
+  // prev() {
+  //   this.setState({'slide': this.state.slide-1})
+  //   // this.props.onChange(this.state.slide)
+  // }
+  componentWillReceiveProps(nextProps){
+    this.setState({'slide': nextProps.slide})
+      // alert();
   }
   componentDidUpdate() {
+    // alert(this.state.slide)
     if (React.Children.count(this.props.children) == this.state.slide+1 && !this.state.end ) {
-      this.setState({end:true})
+      this.setState({'end':true})
       this.props.onComplete();
     }
   }
@@ -33,7 +44,8 @@ class Slider extends Component {
 Slider.defaultProps = {
   target: '_self',
   disabled: false,
-  onComplete: function functionName() {}
+  onComplete: function functionName() {},
+  onChange: function functionName() {}
 };
 
 export default Slider;

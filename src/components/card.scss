@@ -11,4 +11,8 @@
       border-color: $value;
     }
   }
+
+  &:last-child {
+    border-bottom: 0;
+  }
 }

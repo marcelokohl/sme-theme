@@ -1,4 +1,5 @@
 import React from "react";
+import { Spinner, Text } from "../index.js"
 
 class Page extends React.Component {
   constructor(props) {
@@ -14,10 +15,11 @@ class Page extends React.Component {
   render() {
     if (this.props.hide) return null
 
-    const { children, name, className, loading, footer, title } = this.props
+    const { children, name, className, loading, footer, title, header } = this.props
     let c = "Page"
 
     if (footer) c += " footer"
+    if (header) c += " header"
     if (className) c += " "+className
     if (loading) c += " loading"
     if (name) c += " page-"+name
@@ -25,8 +27,16 @@ class Page extends React.Component {
     return (
       <div className={c}>
       {children}
+      {header &&
+        <header className="page-header">{header}</header>
+      }
       {footer &&
         <footer className="page-footer">{footer}</footer>
+      }
+      {loading &&
+        <div className="page-loading">
+          <Spinner className="lg primary mb-lg" />
+        </div>
       }
       </div>
     );
@@ -36,6 +46,7 @@ class Page extends React.Component {
 
 Page.defaultProps = {
   footer: undefined,
+  loading: false,
   title: undefined
 };
 

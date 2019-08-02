@@ -1,0 +1,51 @@
+@import "../variables.scss";
+
+.Slider-display {
+  display: flex;
+  margin-left:-4px;
+  margin-right:-4px;
+  .slider-display-item {
+    padding: 0;
+    color: transparent;
+    font-size: 0;
+    width: 100%;
+    height: 6px;
+    margin: 0 4px;
+    border-radius: 6px;
+    background-color: color(gray);
+    border:0;
+    position: relative;
+    overflow: hidden;
+
+    // span {
+    //   position: absolute;
+    //   top: 0; right: initial; bottom: 0; left: 0;
+    //   background-color: color(primary);
+    //   width: 0%;
+    //   animation-duration: 1s;
+    //   animation-fill-mode: forwards;
+    // }
+    &.active {
+      background-color: color(primary);
+      // span {
+      //   animation-name: slider-display;
+      //   // width: 100%;
+      // }
+    }
+    // &.active {
+    //   span {
+    //     animation-name: slider-display;
+    //     // width: 100%;
+    //   }
+    // }
+  }
+}
+
+@keyframes slider-display {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}

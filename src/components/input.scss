@@ -6,18 +6,18 @@
   margin-bottom: space-size(md);
   &.error {
     label, .error {
-      color: color(error);
+      color: color(error)!important;
     }
     input, select {
-      border-color: color(error);
+      border-color: color(error)!important;
     }
   }
   &.success {
     label, .success {
-      color: color(error);
+      color: color(success)!important;
     }
     input, select {
-      border-color: color(error);
+      border-color: color(success)!important;
     }
   }
   &.disabled {
@@ -62,13 +62,23 @@
 
 
 .Input-select {
-  select {
+  select:focus-visible {
+    border: 1px solid red;
   }
   option {
     all:unset;
     background: color(black);
     &:active, &:focus, &:checked {
       background: color(black);
+    }
+  }
+  .input-select-wrap {
+    position: relative;
+    .Icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
     }
   }
 }
@@ -79,7 +89,7 @@
     cursor: pointer;
   }
   .Button {
-    margin: 0;
+    margin: .5rem 0;
   }
   input {
     opacity: 0;

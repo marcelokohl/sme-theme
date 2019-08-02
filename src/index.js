@@ -14,8 +14,11 @@ import Tabs from "./components/tabs";
 import Tab from "./components/tab";
 import Slider from "./components/slider";
 import Slide from "./components/slide";
+import SliderDisplay from "./components/sliderDisplay";
 import Breadcrumb from "./components/breadcrumb";
 import Form from "./components/form";
+import Spinner from "./components/spinner";
+import Video from "./components/video";
 
 import Container from "./layout/container";
 import Page from "./layout/page";
@@ -37,8 +40,10 @@ export {
   Title,
   Button,
   Form,
+  Spinner,
   Slider,
   Slide,
+  SliderDisplay,
   Navbar,
   Menubar,
   Breadcrumb,
@@ -46,6 +51,7 @@ export {
   Titlebar,
   Tabs,
   Tab,
+  Video,
   Pagination,
   Progress,
   Status,

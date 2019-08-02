@@ -1,0 +1,32 @@
+@import "../variables.scss";
+
+.Spinner {
+  .Icon {
+    animation-name: spinner;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  @each $name, $value in $icon-sizes { //ICON SIZES
+    &.#{$name} {
+      font-size: $value;
+      width: $value!important;
+      height: $value!important;
+    }
+  }
+
+  @each $name, $value in $colors {
+    &.#{$name} {
+      color: $value;
+    }
+  }
+}
+
+@keyframes spinner {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}

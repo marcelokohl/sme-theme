@@ -1,6 +1,6 @@
 import React from "react";
 // import InputMask from 'react-input-mask'; //https://www.npmjs.com/package/react-input-mask
-import { Template, Image, Button, Text } from "../index.js"
+import { Template, Image, Button, Text, Icon } from "../index.js"
 
 class Input extends React.Component {
   constructor(props) {
@@ -107,10 +107,13 @@ class Input extends React.Component {
       }
       html.push (
         <Template key={this.genKey()}>
-          <select disabled={disabled} ref="field" name={this.props.name} onChange={e => this.onInputChange(e)} value={this.props.value}>
-            <option>--select--</option> {/* @Kohl eu adicionei esse option. (quando seleciona a cidade Brasília, o input nao pega o value do select, talvez pq só fica uma única opção pra selecionar). */ }
-            {htmlOptions}
-          </select>
+          <div className="input-select-wrap">
+            <select disabled={disabled} ref="field" name={this.props.name} onChange={e => this.onInputChange(e)} value={this.props.value}>
+              <option>{this.props.selectFirstOption}</option> {/* @Kohl eu adicionei esse option. (quando seleciona a cidade Brasília, o input nao pega o value do select, talvez pq só fica uma única opção pra selecionar). */ }
+              {htmlOptions}
+            </select>
+            <Icon name="arrow-bottom" />
+          </div>
         </Template>
       )
     }
@@ -155,6 +158,7 @@ Input.defaultProps = {
   children: '',
   // value:'',
   options:[],
+  selectFirstOption: '- Selecionar -',
   className: '',
   imageSrc: '',
   mask: '',
