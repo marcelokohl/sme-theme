@@ -35,7 +35,7 @@ class Page extends React.Component {
       }
       {loading &&
         <div className="page-loading">
-          <Spinner className="lg primary mb-lg" />
+          <div className="page-loader"></div>
         </div>
       }
       </div>
