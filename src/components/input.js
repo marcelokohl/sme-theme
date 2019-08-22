@@ -48,6 +48,7 @@ class Input extends React.Component {
       helpText,
       errorText,
       focus,
+      after,
       plugin,
       disabled
     } = this.props;
@@ -55,6 +56,9 @@ class Input extends React.Component {
     let c = "Input-"+ type + " " + (className?" "+className:'');
     if (disabled) {
       c += ' disabled'
+    }
+    if (after) {
+      c += ' after'
     }
     let html = [];
     if (type == 'image') {
@@ -138,6 +142,9 @@ class Input extends React.Component {
         <Template condition={type != 'label'}>
           {html}
         </Template>
+        <Template condition={after}>
+          {after}
+        </Template>
         <Template condition={helpText != ''}>
           <Text className="help">{helpText}</Text>
         </Template>
@@ -155,6 +162,7 @@ Input.defaultProps = {
   type: 'text',
   focus: false,
   disabled: false,
+  after:false,
   children: '',
   // value:'',
   options:[],

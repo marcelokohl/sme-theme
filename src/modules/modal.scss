@@ -27,6 +27,9 @@
         -webkit-text-stroke-color:$text-color-modal;
       }
     }
+    .Divider {
+      background-color: color(black);
+    }
   }
   &.show {
     visibility: visible;
@@ -42,6 +45,11 @@
     align-items: center;
     .modal-inner {
       max-width: $width-modal;
+    };
+  };
+  @include media-breakpoint-max(md) {
+    .modal-inner {
+      max-width: 100%!important;
     };
   };
 

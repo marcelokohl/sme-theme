@@ -13,8 +13,25 @@
   }
   thead {
     th {
+      cursor: default;
       border-bottom: 1px solid color(white);
       padding: 1.3rem 0 0.7rem;
+      .Icon {
+        display: inline-block;
+        font-size: 7px;
+        transition: .4s;
+      }
+      &.active {
+        color: color(primary);
+      }
+      &.sort-title {
+        cursor: pointer;
+      }
+      &.sort-up {
+        .Icon {
+          transform: rotate(180deg);
+        }
+      }
     }
   }
   tbody {

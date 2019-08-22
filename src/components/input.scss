@@ -24,6 +24,22 @@
     opacity: 0.5;
     pointer-events: none;
   }
+
+  &.after {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+    input, select, textarea {
+      flex: 1 1 auto;
+      width: 1%;
+    }
+    label, .help, .error, .success {
+      flex: 1 1 auto;
+      width: 100%;
+    }
+  }
+
   input, select, textarea {
     @include reset();
     font-family: $font-family-input;
