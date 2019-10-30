@@ -10,6 +10,9 @@
   .Icon, .Title, .Text {
     color: color(black);
   }
+  .Grid {
+    flex-wrap: nowrap;
+  }
 
   @each $name, $value in $colors {
     &.#{$name} {

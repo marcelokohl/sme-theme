@@ -68,7 +68,7 @@ class Pagination extends Component {
   }
 
   render() {
-    const { children, className, page } = this.props;
+    const { className, page } = this.props;
     let c = "Pagination" + (className?' '+className:'');
     if (this.state.size < this.state.step * 2 + 6) {
       return (

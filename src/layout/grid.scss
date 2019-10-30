@@ -5,7 +5,8 @@
   box-sizing: border-box;
   margin: 0 (-$grid-gutter);
   display: flex;
-  
+  flex-wrap: wrap;
+
   &.no-gutter {
     margin: 0;
   }

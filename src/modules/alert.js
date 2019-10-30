@@ -20,12 +20,14 @@ const Alert = props => {
     <div className={c}>
       <Grid>
         <Template condition={icon != undefined}>
-          <Cell className="flex-justify-center flex-column">
+          <Cell size={'auto'} className="flex-justify-center flex-column">
             <Icon className="w-full lg" name={icon} />
           </Cell>
         </Template>
-        <Cell className="flex-justify-center flex-column">
-          <Text>{title}</Text>
+        <Cell size={10} className="flex-justify-center flex-column">
+          {title &&
+            <Text>{title}</Text>
+          }
           {children}
         </Cell>
       </Grid>

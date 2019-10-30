@@ -25,8 +25,13 @@ import Page from "./layout/page";
 import Cell from "./layout/cell";
 import Grid from "./layout/grid";
 import Table from "./layout/table";
+import Thead from "./layout/thead";
+import Tbody from "./layout/tbody";
+import Td from "./layout/td";
+import Tr from "./layout/tr";
 import Template from "./layout/template";
 import Wrap from "./layout/wrap";
+import Collapse from "./layout/collapse";
 
 import Alert from "./modules/alert";
 import Modal from "./modules/modal";
@@ -34,6 +39,7 @@ import Navbar from "./modules/navbar";
 import Menubar from "./modules/menubar";
 import Titlebar from "./modules/titlebar";
 import Pagination from "./modules/pagination";
+import Search from "./modules/search";
 
 export {
   Text,
@@ -53,6 +59,7 @@ export {
   Tab,
   Video,
   Pagination,
+  Search,
   Progress,
   Status,
   Divider,
@@ -63,8 +70,13 @@ export {
   Modal,
   Template,
   Wrap,
+  Collapse,
   Page,
   Table,
+  Thead,
+  Tbody,
+  Td,
+  Tr,
   Image,
   Icon,
   Grid,

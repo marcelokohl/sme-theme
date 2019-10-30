@@ -5,6 +5,7 @@
   float: left;
   padding: 0 $grid-gutter;
   box-sizing: border-box;
+  flex-shrink: 0;
 }
 .Grid.no-gutter {
   & > [class*="Cell-"]{
@@ -14,6 +15,6 @@
 
 @for $i from 1 through $grid-columns{
   .Cell-#{$i}{
-    width: 100% / $grid-columns * $i
+    width: (100% / $grid-columns * $i) - (0.3)
   }
 }

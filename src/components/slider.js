@@ -33,7 +33,7 @@ class Slider extends Component {
   }
 
   render() {
-    const { children, className, tag } = this.props;
+    const { children, className } = this.props;
     let c = "Slider " + (className?className:'');
     return (
       <div className={c}>{children[this.state.slide]}</div>

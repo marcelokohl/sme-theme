@@ -1,49 +1,79 @@
-## SME Theme
+# SME Theme
+This is a ***BETA*** module and is exclusive to **ReactJS**.
 
-### Installation
+## Installation
 
 `npm i sme-theme`
 
-### How To Use
+## How To Use
 
-...
-Components
-`import { Text, Title, Button, etc... } from "sme-theme"`
+### Importing the JS
+The sme-theme has over 30 components, but you can only import as many as you need into your page, as follows:
+`import { Text, Title, Button, etc } from "sme-theme"`.
+The list of available components is below.
 
-CSS
-In main scss `@import "../node_modules/sme-theme/src/theme.scss";`
+After importing a component, use it as follows:
+`<Component attribute={value}>{content}</Component>`
 
-Sizes:
+Each component has its own characteristics, such as specific attributes and some has no child content.
 
-xs, sm, md, lg, xl
+- Component example with content:
+`<Text className="my-text" tag="span">{content}</Text>`
 
-`<Text className="" tag="">{children}</Text>`
+- Component example without content:
+`<Image className="my-image" src="logo.svg"/>`
 
-`<Title className="" tag="">{children}</Title>`
+*The components were developed with minimal changes to the html tags and the tags proposed by ReactJS.*
 
-`<Image className="" src=""/>`
+### Importing the SCSS
+To import scss into your project, use in your scss:
+`@import "../node_modules/sme-theme/src/theme.scss";`
 
-`<Icon className="" name=""/>`
+You can import the default theme or create your own in your application. Just follow the steps:
+- Check which variables will be modified in: node_modules/sme-theme/src/vatiables.scss
+- In the default application scss reset the variables, example:
+`$ font-family: Montserrat! default;`
+- Immediately after that, import the main theme scss: node_modules/sme-theme/src/theme.scss
 
-`<Button to="RouterLink" plugin={Link} href="" className="" onClick={} target="" active disabled>{children}</Button>`
 
-`<Page name="" loading={}>{children}</Page>`
+## List of components:
+Attributes are listed in square brackets: []
+### Basics
+- **Bg** [className, image, color, overlayerImage, overlayerColor]
+- **Breadcrumb** [children, className, tag]
+- **Button** [children, to, href, className, target, active, disabled, plugin, ga, loading, type, onClick, behaviour]
+- **Card** [children, className]
+- **Counter** [step, interval, max, activ, endValue, onComplete]
+- **Divider** [children, className]
+- **Form** [children, onSubmit, className]
+- **Icon** [name, className]
+- **Image** [src, className, alt]
+- **Input** [id, children, type, mask, options, className, name, imageSrc, imageClass, buttonClass, buttonText, helpText, errorText, focus, after, plugin, disabled]
+- **Progress** [className, progress]
+- **Slide** [children, className]
+- **Slider** [children, className]
+- **Spinner** [children, className]
+- **Status** [children, className, success, error]
+- **Tab** [children, render, className]
+- **Tabs** [children, className]
+- **Text** [children, className, tag]
+- **Title** [children, className, tag]
+- **Video** [className, url]
 
-### Props
+### Layout
+- **Cell** [children, size, className]
+- **Collapse** [children, className, show]
+- **Container** [children, className]
+- **Grid** [children, className]
+- **Page** [children, name, className, loading, footer, title, header]
+- **Table** [children, className]
+- **Template** [children, condition]
+- **Wrap** [children, className]
 
-| _Prop_ |     _Description_     | _Default value_ |
-| ------ | :-------------------: | :-------------: |
-| color  | Sets background color |      blue       |
-
-### Example
-
-counter
-
-`<Counter step={-1} max={365} ref="counterDay">2</Counter>D &nbsp;`
-`<Counter step={-1} max={24} onComplete={() => {this.refs.counterDay.update();}} ref="counterHour">0</Counter>H &nbsp;`
-`<Counter step={-1} max={60} onComplete={() => {this.refs.counterHour.update();}} ref="counterMin">0</Counter>M &nbsp;`
-`<Counter step={-1} interval={1} max={60} active={true} onComplete={() => {this.refs.counterMin.update();}}>3</Counter>S`
-
-```
-...
-```
+### Modules
+- **Alert** [children, className, title, type, iconName]
+- **Menubar** [children, className, collapse, header]
+- **Modal** [children, className]
+- **Navbar** [children, className]
+- **Pagination** [className, size, page, step]
+- **Titlebar** [children, className]

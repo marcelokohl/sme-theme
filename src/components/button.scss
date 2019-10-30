@@ -23,7 +23,7 @@
   @each $name, $value in $button-sizes {
     &.#{$name} {
       font-size: $value;
-      padding: space-size(#{$name}) space-size(#{$name})*3;
+      padding: $value $value*2;
     }
   }
   &.block {
@@ -38,6 +38,10 @@
     border-radius: 100px;
     width: 3rem;
     height: 3rem;
+    &.sm {
+      width: 2rem;
+      height: 2rem;
+    }
   }
   &.unset {
     @include reset();
@@ -96,7 +100,27 @@
     background-color: rgba(color(default), .4);
     border-color: rgba(color(default), 0);
   }
+  &.behaviour-refresh {
+    transition: .3s;
+    &.loading {
+      &>* {
+        animation-name: behaviour-refresh;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+    }
+  }
   .Spinner {
     font-size: 2em;
+  }
+}
+
+@keyframes behaviour-refresh {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
   }
 }

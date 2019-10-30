@@ -1,6 +1,6 @@
 import React from "react";
 // import InputMask from 'react-input-mask'; //https://www.npmjs.com/package/react-input-mask
-import { Template, Image, Button, Text, Icon } from "../index.js"
+import { Template, Image, Button, Text, Icon, Wrap } from "../index.js"
 
 class Input extends React.Component {
   constructor(props) {
@@ -50,6 +50,7 @@ class Input extends React.Component {
       focus,
       after,
       plugin,
+      append,
       disabled
     } = this.props;
 
@@ -59,6 +60,9 @@ class Input extends React.Component {
     }
     if (after) {
       c += ' after'
+    }
+    if (append) {
+      c += ' append'
     }
     let html = [];
     if (type == 'image') {
@@ -139,8 +143,14 @@ class Input extends React.Component {
     return (
       <div className={c}>
         <label className="Text" htmlFor={id}>{children}</label>
-        <Template condition={type != 'label'}>
+        <Template condition={type != 'label' && !append}>
           {html}
+        </Template>
+        <Template condition={append}>
+          <Wrap className="append-wrap">
+            {html}
+            {append}
+          </Wrap>
         </Template>
         <Template condition={after}>
           {after}
@@ -163,6 +173,7 @@ Input.defaultProps = {
   focus: false,
   disabled: false,
   after:false,
+  append:false,
   children: '',
   // value:'',
   options:[],

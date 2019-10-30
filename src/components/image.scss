@@ -7,6 +7,8 @@
   }
   &.rounded {
     border-radius: 100%;
+  }
+  &.square, &.rounded {
     overflow: hidden;
     display: block;
     object-fit: cover;

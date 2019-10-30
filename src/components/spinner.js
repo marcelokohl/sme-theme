@@ -3,7 +3,7 @@ import { Icon } from "../index.js"
 
 class Spinner extends Component {
   render() {
-    const { children, className, tag } = this.props;
+    const { children, className } = this.props;
     let c = "Spinner " + (className?className:'');
     return (
       <div className={c}>
