@@ -14,4 +14,17 @@
       margin: 0;
     }
   }
+  &.fixed {
+    position: fixed;
+    z-index: 9;
+    background: color(black);
+    &.top {
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+}
+.Titlebar.fixed.top + * {
+  padding-top: 60px!important;
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, Button, Divider, Template, Container } from "../index.js"
+import { Image, Button, Divider, Template, Container, Spinner, Text } from "../index.js"
 
 class Modal extends Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class Modal extends Component {
   }
 
   render() {
-    let c = "Modal" + (this.state.show?' show ':' ') + (this.props.className?this.props.className:'');
+    let c = "Modal" + (this.state.show?' show ':' ') + (this.props.className?this.props.className:'') + (this.props.loading?' loading':'');
     return (
       <div className={c}>
         <div className="modal-inner">
@@ -32,6 +32,14 @@ class Modal extends Component {
               <Button className="block outline black mt-lg mb-0 max-w-xs mx-auto" onClick={() => {this.hide()}}>Fechar</Button>
             </Template>
           </Container>
+          {this.props.loading &&
+            <div className="modal-loading">
+              <div className="modal-loader">
+              <Spinner className="primary lg" />
+              <Text className="primary lg mt-md">Carregando...</Text>
+              </div>
+            </div>
+          }
         </div>
       </div>
     );
@@ -39,7 +47,8 @@ class Modal extends Component {
 };
 
 Modal.defaultProps = {
-  close: false
+  close: false,
+  loading: false
 };
 
 export default Modal;

@@ -6,4 +6,11 @@
   &.invert {
     background-color: $background-color-divider-invert;
   }
+  &.sm {
+    height: $height-divider/2;
+  }
+  &.muted {
+    // height: $height-divider/3;
+    background-color: rgba($background-color-divider,.4);
+  }
 }
