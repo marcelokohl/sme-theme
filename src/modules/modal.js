@@ -32,15 +32,15 @@ class Modal extends Component {
               <Button className="block outline black mt-lg mb-0 max-w-xs mx-auto" onClick={() => {this.hide()}}>Fechar</Button>
             </Template>
           </Container>
-          {this.props.loading &&
-            <div className="modal-loading">
-              <div className="modal-loader">
-              <Spinner className="primary lg" />
-              <Text className="primary lg mt-md">Carregando...</Text>
-              </div>
-            </div>
-          }
         </div>
+        {this.props.loading &&
+          <div className="modal-loading">
+          <div className="modal-loader">
+          <Spinner className="primary lg" />
+          <Text className="primary lg mt-md">Carregando...</Text>
+          </div>
+          </div>
+        }
       </div>
     );
   };

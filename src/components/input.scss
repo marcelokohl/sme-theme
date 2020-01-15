@@ -95,6 +95,13 @@
       }
     }
   }
+  @each $name, $value in $input-sizes {
+    &.#{$name} {
+      input, select, textarea {
+        font-size: $value;
+      }
+    }
+  }
 }
 
 

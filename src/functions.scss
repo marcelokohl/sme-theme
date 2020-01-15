@@ -4,6 +4,9 @@
 @function font-size($key) {
   @return map-get($text-sizes, $key);
 }
+@function input-size($key) {
+  @return map-get($input-sizes, $key);
+}
 @function button-size($key) {
   @return map-get($button-sizes, $key);
 }

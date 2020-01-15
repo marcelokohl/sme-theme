@@ -1,6 +1,12 @@
 @import "../variables.scss";
 
 
+@for $i from 1 through $grid-columns{
+  .Cell-#{$i}{
+    width: (100% / $grid-columns * $i)
+  }
+}
+
 .Grid [class*="Cell-"]{
   float: left;
   padding: 0 $grid-gutter;
@@ -13,8 +19,10 @@
   }
 }
 
-@for $i from 1 through $grid-columns{
-  .Cell-#{$i}{
-    width: (100% / $grid-columns * $i) - (0.3)
+.Grid.break-md {
+  [class*="Cell-"] {
+    @include media-breakpoint-max(md) {
+      width: 100%;
+    };
   }
 }

@@ -22,6 +22,7 @@ import Video from "./components/video";
 
 import Container from "./layout/container";
 import Page from "./layout/page";
+import Sensor from "./layout/sensor";
 import Cell from "./layout/cell";
 import Grid from "./layout/grid";
 import Table from "./layout/table";
@@ -72,6 +73,7 @@ export {
   Wrap,
   Collapse,
   Page,
+  Sensor,
   Table,
   Thead,
   Tbody,

@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Spinner } from "../index.js"
+import { Spinner, Text, Template } from "../index.js"
 
 class Button extends React.Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class Button extends React.Component {
   }
 
   render() {
-    const { children, to, href, className, target, active, disabled, plugin, ga, loading, type, onClick, behaviour } = this.props;
+    const { children, to, href, className, target, active, disabled, plugin, ga, loading, type, onClick, behaviour, title } = this.props;
     let c = "Button " + (className?className:'');
     if (this.state.active) c += ' active'
     if (disabled) c += ' disabled'
@@ -30,13 +30,13 @@ class Button extends React.Component {
 
     if (to) {
       const Link = plugin;
-      return <Link className={c} to={to} onClick={onClickB}>{children}</Link>;
+      return <Link title={title?title:false} className={c} to={to} onClick={onClickB}>{children}</Link>;
     } else if (href) {
-      return <a className={c}  href={href} onClick={onClickB} target={target}>{children}</a>;
+      return <a title={title?title:false} className={c}  href={href} onClick={onClickB} target={target}>{children}</a>;
     } else {
       return (
-        <button disabled={disabled || loading} type={type} className={c} onClick={onClickB}>
-          {(loading && behaviour != 'refresh') && <Spinner />}
+        <button title={title?title:false} disabled={disabled || loading} type={type} className={c} onClick={onClickB}>
+          {(loading && behaviour != 'refresh') && <Template><Spinner /><Text>{children}</Text></Template>}
           {(!loading && behaviour != 'refresh') && children}
           {(behaviour == 'refresh') && children}
         </button>

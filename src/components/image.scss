@@ -20,6 +20,20 @@
       @include position-abslute();
     }
   }
+  @each $value in $image-ratios {
+    &.ratio-#{nth($value, 1)}-#{nth($value, 2)} {
+      overflow: hidden;
+      display: block;
+      object-fit: cover;
+      @include aspect-ratio(nth($value, 1),nth($value, 2));
+      img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        @include position-abslute();
+      }
+    }
+  }
   @each $name, $value in $image-sizes {
     &.#{$name} {
       overflow: hidden;

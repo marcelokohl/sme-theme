@@ -1,6 +1,5 @@
 @import "../variables.scss";
 
-
 .Title {
   font-family: $font-family-title;
   margin: 0;
@@ -40,9 +39,12 @@
   &.uppercase {
     text-transform: uppercase;
   }
+  &.italic {
+    font-style: italic;
+  }
 
   &.outline {
-    -webkit-text-stroke: .045em $text-color;
+    -webkit-text-stroke: 1px $text-color;
     color: transparent;
     text-transform: uppercase;
     @each $name, $value in $colors {

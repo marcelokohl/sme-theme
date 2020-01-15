@@ -38,9 +38,16 @@
     border-radius: 100px;
     width: 3rem;
     height: 3rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     &.sm {
       width: 2rem;
       height: 2rem;
+    }
+    &.lg {
+      width: 4rem;
+      height: 4rem;
     }
   }
   &.unset {
@@ -67,6 +74,9 @@
     &.outline {
       color: color(white);
     }
+  }
+  &.black {
+    color: color(primary);
   }
   @each $name, $value in $colors {
     &.#{$name} {
@@ -96,9 +106,13 @@
     }
   }
   &.loading {
+    position: relative;
     opacity: 1;
     background-color: rgba(color(default), .4);
     border-color: rgba(color(default), 0);
+    .Text {
+      color: transparent;
+    }
   }
   &.behaviour-refresh {
     transition: .3s;
@@ -113,6 +127,9 @@
   }
   .Spinner {
     font-size: 2em;
+    position: absolute;
+    left: 0;
+    right: 0;
   }
 }
 
