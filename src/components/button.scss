@@ -5,7 +5,7 @@
   font-family: $font-family-button;
   color: color(black);
   font-size: button-size(md);
-  padding: space-size(md) space-size(md)*3;
+  padding: 1rem button-size(md)*2;
   background: color(default);
   border: $border-size-button solid color(default);
   font-style: normal;
@@ -23,7 +23,7 @@
   @each $name, $value in $button-sizes {
     &.#{$name} {
       font-size: $value;
-      padding: $value $value*2;
+      padding: 1rem $value*2;
     }
   }
   &.block {
