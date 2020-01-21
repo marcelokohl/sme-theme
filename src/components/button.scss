@@ -1,46 +1,70 @@
-@import "../variables.scss";
-
-
 .Button {
-  font-family: $font;
-  color: color(white);
-  font-size: font-size(md);
-  padding: space-size(md);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-family: $font-family-button;
+  color: color(black);
+  font-size: button-size(md);
+  padding: 1rem button-size(md)*2;
   background: color(default);
-  border: $botton-outline-border-size solid color(default);
+  border: $border-size-button solid color(default);
   font-style: normal;
   font-weight: bold;
   text-align: center;
-  letter-spacing: 0.1em;
   text-decoration: none;
-  box-sizing: border-box;
-  border-radius: 100px;
-  line-height: 1em;
+  border-radius: $border-radius-button;
   text-transform: uppercase;
   outline: none;
   cursor: pointer;
   margin-bottom: space-size(md);
+  line-height: 1em;
+  display: inline-block;
 
-  @each $name, $value in $text-sizes {
+  @each $name, $value in $button-sizes {
     &.#{$name} {
-      font-size: $value!important;
-      padding: space-size(#{$name})!important;
+      font-size: $value;
+      padding: 1rem $value*2;
     }
+  }
+  &.block {
+    padding-left: 0;
+    padding-right: 0;
   }
   &.rounded {
     line-height: 0;
   }
-  &.block {
-    display: block!important;
-    text-align: center!important;
-    width: 100%!important;
+  &.circle {
+    padding: 0;
+    border-radius: 100px;
+    width: 3rem;
+    height: 3rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    &.sm {
+      width: 2rem;
+      height: 2rem;
+    }
+    &.lg {
+      width: 4rem;
+      height: 4rem;
+    }
   }
   &.unset {
-    all:unset;
+    @include reset();
   }
   &.link {
-    all:unset;
+    @include reset();
+    font-family: $font-family-text;
+    font-size: inherit;
+    color: inherit;
+    font-weight: inherit;
     text-decoration: underline;
+    cursor: pointer;
+    display: inline-block;
+    &.active {
+      color: color(primary);
+    }
   }
 
   &.invert {
@@ -49,34 +73,71 @@
     color: color(black);
     &.outline {
       color: color(white);
-      box-shadow: none;
     }
+  }
+  &.black {
+    color: color(primary);
   }
   @each $name, $value in $colors {
     &.#{$name} {
       background-color: $value;
       border-color: $value;
-      box-shadow: 0px 0px 40px rgba($value, 0.5);
       &.outline {
         color: $value;
-        box-shadow: none;
+      }
+
+      &.loading {
+        background-color: rgba($value, .4);
+        border-color: rgba($value, .4);
       }
     }
   }
+  @each $name, $value in $colors {
+    &.color-#{$name} {
+      color: $value;
+    }
+  }
   &.outline {
-    background-color: transparent;
-    box-shadow: none;
+    color: color(default);
+    background-color: color(transparent);
+
+    &.loading {
+      background-color: color(transparent);
+    }
+  }
+  &.loading {
+    position: relative;
+    opacity: 1;
+    background-color: rgba(color(default), .4);
+    border-color: rgba(color(default), 0);
+    .Text {
+      color: transparent;
+    }
+  }
+  &.behaviour-refresh {
+    transition: .3s;
+    &.loading {
+      &>* {
+        animation-name: behaviour-refresh;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+    }
+  }
+  .Spinner {
+    font-size: 2em;
+    position: absolute;
+    left: 0;
+    right: 0;
   }
 }
 
-.app.dark .Button {
-  &.invert {
-    background-color: color(black);
-    border-color: color(black);
-    color: color(white);
-    &.outline {
-      background-color: transparent;
-      color: color(black);
-    }
+@keyframes behaviour-refresh {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
   }
 }

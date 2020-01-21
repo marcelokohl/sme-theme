@@ -1,5 +1,30 @@
 .Titlebar {
-  border: 1px solid #252525;
-  padding: 20px 0;
+  border-bottom: 1px solid color(white);
+  padding: 1rem 0;
   text-align: center;
+  & > .Container {
+    display: flex;
+    justify-content: space-between;
+    // flex-direction: row-reverse;
+    align-items: center;
+    height: 2.9rem;
+
+    & > .Button {
+      position: initial;
+      margin: 0;
+    }
+  }
+  &.fixed {
+    position: fixed;
+    z-index: 9;
+    background: color(black);
+    &.top {
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+}
+.Titlebar.fixed.top + * {
+  padding-top: 60px!important;
 }

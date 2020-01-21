@@ -1,53 +1,64 @@
 @import "../variables.scss";
 
-.Menubar {
-  position: fixed;
-  top: 0;
-  width: 260px;
-  bottom: 0;
-  left: 0;
-  border-right: 1px solid color(gray);
-  .menu-content {
-    .Button {
-      background: transparent;
-      border: transparent;
-      display: block;
-      width: 100%;
-      text-align: left;
-      color: color(white);
-      // font-size: font-size(xxl);
-
-      &.active {
-        color: color(red);
-      }
-    }
-  }
-
-  &.show {
-    left: 0;
-  }
-  @include media-breakpoint-max(md) {
-    position: fixed;
-    background: color(black);
-    top: 0;
-    width: 100vw;
-    bottom: 0;
-    left: -100vw;
-    z-index: 200;
-    // transition: .3s;
-  };
-}
-
-
-.menubar-side {
-  margin-left: 300px;
-  @include media-breakpoint-max(md) {
-    margin-left: 0;
-  }
-}
-.menubar-button {
-  visibility: hidden!important;
-  @include media-breakpoint-max(md) {
-    visibility: visible!important;
-  }
-}
+// .Menubar {
+//   position: fixed;
+//   top: 0;
+//   width: 260px;
+//   bottom: 0;
+//   left: 0;
+//   border-right: 1px solid color(gray);
+//   background-color: color(primary);
+//   .menu-content {
+//     .Button {
+//       background: transparent;
+//       border: transparent;
+//       color: transparent;
+//       display: block;
+//       width: 100%;
+//       text-align: left;
+//       padding: 0.2em 0;
+//       margin: 0;
+//       -webkit-text-stroke: .03em color(black);
+//
+//       &.active {
+//         color: color(black);
+//       }
+//     }
+//   }
+//
+//   header, header .Icon {
+//     color: color(black);
+//   }
+//   .Titlebar {
+//     border-color: color(black);
+//   }
+//
+//   &.show {
+//     left: 0;
+//     width: 100vw;
+//   }
+//   @include media-breakpoint-max(md) {
+//     position: fixed;
+//     // background: color(black);
+//     top: 0;
+//     width: 100vw;
+//     bottom: 0;
+//     left: -100vw;
+//     z-index: 200;
+//     // transition: .3s;
+//   };
+// }
+//
+//
+// .menubar-side {
+//   margin-left: 300px;
+//   @include media-breakpoint-max(md) {
+//     margin-left: 0;
+//   }
+// }
+// .menubar-button {
+//   visibility: hidden!important;
+//   @include media-breakpoint-max(md) {
+//     visibility: visible!important;
+//   }
+// }

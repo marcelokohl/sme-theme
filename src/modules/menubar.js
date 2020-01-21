@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, Button, Template, Container, Icon, Titlebar, Image } from "../../../../_temp/sme-theme/src/index.js"
+import { Text, Button, Template, Container, Icon, Titlebar, Image } from "../index.js"
 
 class Menubar extends Component {
   constructor(props) {
@@ -26,9 +26,7 @@ class Menubar extends Component {
           {header}
         </header>
         <nav className="menu-content">
-          <Container className="max-w-xs pr">
-            {children}
-          </Container>
+          {children}
         </nav>
       </div>
     );

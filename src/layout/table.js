@@ -1,9 +1,10 @@
 import React from "react";
 
 const Table = props => {
-  const { children, gutter } = props;
+  const { children, className } = props;
+  let c = "Table " + (className?className:'');
   return (
-    <table className={"Table"}>{children}</table>
+    <table className={c}>{children}</table>
   );
 };
 

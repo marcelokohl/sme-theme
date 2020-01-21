@@ -1,6 +1,6 @@
 import React from "react";
 import InputMask from 'react-input-mask'; //https://www.npmjs.com/package/react-input-mask
-import { Template, Button, Text } from "../../../../_temp/sme-theme/src/index.js"
+import { Template, Button, Text } from "../index.js"
 
 const InputWrap = props => {
   const { children, labelText, className, errorText, helpText } = props;

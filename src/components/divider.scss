@@ -1,13 +1,16 @@
-@import "../variables.scss";
-
-
 .Divider {
-  background-color: color(white);
-  opacity: .1;
-  height: 1px;
+  background-color: $background-color-divider;
+  height: $height-divider;
   width: 100%;
 
   &.invert {
-    background-color: color(black);
+    background-color: $background-color-divider-invert;
   }
-} 
+  &.sm {
+    height: $height-divider/2;
+  }
+  &.muted {
+    // height: $height-divider/3;
+    background-color: rgba($background-color-divider,.4);
+  }
+}

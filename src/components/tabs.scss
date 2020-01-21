@@ -1,15 +1,23 @@
 @import "../variables.scss";
 
 .Tabs {
-  border-bottom: color(gray) 1px solid;
+  border-bottom: color(white) 2px solid;
   margin-bottom: space-size(md);
   .Button {
     background: transparent;
     border: 0;
-    padding: 20px 0;
-    margin-right: 20px;
+    padding: space-size(md) 0;
+    margin-right: space-size(md);
+    color: $text-color;
+    font-size: $font-size;
+    font-family: $font-family;
+    text-transform: initial;
+    padding: 0;
+    margin: 0;
+    margin-right: space-size(xl);
+    padding-bottom: space-size(md);
 
-    &.active {
+    &.active, &:hover {
       color: color(primary);
     }
   }

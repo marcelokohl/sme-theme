@@ -1,6 +1,6 @@
 import React from "react";
 // import {withRouter} from 'react-router-dom';
-import { Image, Button, Container } from "../../../../_temp/sme-theme/src/index.js"
+import { Image, Button, Container } from "../index.js"
 
 const Titlebar = props => {
   const { children, className } = props;

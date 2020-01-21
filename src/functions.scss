@@ -4,6 +4,15 @@
 @function font-size($key) {
   @return map-get($text-sizes, $key);
 }
+@function input-size($key) {
+  @return map-get($input-sizes, $key);
+}
+@function button-size($key) {
+  @return map-get($button-sizes, $key);
+}
+@function title-size($key) {
+  @return map-get($title-sizes, $key);
+}
 @function space-size($key) {
   @return map-get($space-sizes, $key);
 }
@@ -12,7 +21,4 @@
 }
 @function container-size($key) {
   @return map-get($container-sizes, $key);
-}
-@function rounded-size($key) {
-  @return map-get($rounded-sizes, $key);
 }

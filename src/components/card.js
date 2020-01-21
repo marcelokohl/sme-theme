@@ -1,5 +1,4 @@
 import React from "react";
-import { Grid } from "../../../../_temp/sme-theme/src/index.js"
 
 const Card = props => {
   const { children, className } = props;

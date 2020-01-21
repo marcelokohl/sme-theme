@@ -6,13 +6,16 @@
     content: '';
     width: 9px;
     height: 9px;
-    background: color(red);
+    background: color(muted);
     display: inline-block;
     border-radius: 100%;
     margin-right: space-size(xs);
   }
 
-  &.active:before {
-  background: color(green);
+  &.success:before {
+    background: color(success);
+  }
+  &.error:before {
+    background: color(error);
   }
 }

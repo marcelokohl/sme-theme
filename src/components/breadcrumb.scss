@@ -1,18 +1,26 @@
-@import "../variables.scss";
-
-
 .Breadcrumb {
   margin-bottom: space-size(md);
   .Button, .Text {
     @include reset();
-    margin-right: space-size(md)*2;
+    margin-right: space-size(md)*1.5;
     font-size: font-size(md);
     position: relative;
+    font-family: $font-family;
+    color: $font-color-breadcrumb;
 
     &:after {
-      content: ">";
+      font-family: $font-family-breadcrumb-divider;
+      content: $content-breadcrumb-divider;
       position: absolute;
-      right: -(space-size(md)+(font-size(md)/2));
+      right: -(space-size(md));
+      pointer-events: none;
+    }
+
+  }
+  .Button:hover {
+    color: color(primary);
+    &:after {
+      color: $font-color-breadcrumb;
     }
   }
   &>*:last-child:after {

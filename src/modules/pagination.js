@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Text, Button, Icon } from "../../../../_temp/sme-theme/src/index.js"
+import { Text, Button, Icon } from "../index.js"
 
 class Pagination extends Component {
   constructor(props) {
@@ -7,25 +7,25 @@ class Pagination extends Component {
     this.state = {
       size: this.props.size,
       page: this.props.page,
-      step: 3
+      step: this.props.step
     }
   }
 
   buttonClass(i) {
-    return this.state.page===i?'rounded':'rounded transparent'
+    return this.state.page === i ? 'active':''
   }
 
   createLeft() {
-    return <Button className="rounded transparent" onClick={() => this.prevPage()}><Icon name="arrow-left"/></Button>
+    return <Button onClick={() => this.prevPage()}><Icon name="arrow-left"/></Button>
   }
   createRight() {
-    return <Button className="rounded transparent" onClick={() => this.nextPage()}><Icon name="arrow-right"/></Button>
+    return <Button onClick={() => this.nextPage()}><Icon name="arrow-right"/></Button>
   }
 
   createFirst() {
     return (
       <Fragment>
-        <Button className={this.buttonClass(1)} onClick={(e) => this.changePage(e,1)}>1</Button>
+        <Button className={this.buttonClass(1)} onClick={(e) => this.changePage(e)}>1</Button>
         <Text tag="span">...</Text>
       </Fragment>
     )
@@ -33,7 +33,7 @@ class Pagination extends Component {
   createList(s, f) {
     let html =[]
     for (var i = s; i < f; i++) {
-      html.push(<Button className={this.buttonClass(i)} onClick={(e) => this.changePage(e,i)} key={i}>{i}</Button>);
+      html.push(<Button className={this.buttonClass(i)} onClick={(e) => this.changePage(e)} key={i}>{i}</Button>);
     }
     return html
   }
@@ -41,13 +41,13 @@ class Pagination extends Component {
     return (
       <Fragment>
         <Text tag="span">...</Text>
-        <Button className={this.buttonClass(this.state.size)} onClick={(e) => this.changePage(e,this.state.size)}>{this.state.size}</Button>
+        <Button className={this.buttonClass(this.state.size)} onClick={(e) => this.changePage(e)}>{this.state.size}</Button>
       </Fragment>
     )
   }
 
-  changePage(el, page) {
-    this.setState({page: Number(el.target.innerHTML)})
+  changePage(e) {
+    this.setState({page: Number(e.target.innerHTML)})
   }
 
   prevPage() {
@@ -68,10 +68,14 @@ class Pagination extends Component {
   }
 
   render() {
-    const { children, className, page } = this.props;
+    const { className, page } = this.props;
     let c = "Pagination" + (className?' '+className:'');
     if (this.state.size < this.state.step * 2 + 6) {
-      return this.createList(1, this.state.size + 1);
+      return (
+        <div className={c}>
+          {this.createList(1, this.state.size + 1)}
+        </div>
+      );
     }
     else if (this.state.page < this.state.step * 2 + 1) {
       return (
@@ -110,6 +114,7 @@ class Pagination extends Component {
 Pagination.defaultProps = {
   size: 3,
   page: 1,
+  step: 1,
   onChange: function functionName() {}
 }
 

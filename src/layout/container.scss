@@ -1,9 +1,16 @@
 @import "../variables.scss";
 
-
+$container-padding: 20px;
 .Container {
   max-width: container-size(xl);
   width: 100%;
+  padding-left: $container-padding;
+  padding-right: $container-padding;
+
+  &.center {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   @each $name, $value in $container-sizes {
     @include media-breakpoint-min($name) {

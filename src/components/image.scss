@@ -1,14 +1,14 @@
-@import "../variables.scss";
-
 .Image {
-  &.border {
-    border: 6px solid white;
+  img {
+    max-width: 100%;
   }
-  // ROUNDED
+  &.center {
+    text-align: center;
+  }
   &.rounded {
     border-radius: 100%;
   }
-  &[class*="rounded"], &[class*="image-"] {
+  &.square, &.rounded {
     overflow: hidden;
     display: block;
     object-fit: cover;
@@ -20,20 +20,43 @@
       @include position-abslute();
     }
   }
-  @each $name, $value in $text-sizes {
-    &.rounded-#{$name} {
-      border-radius: $value!important;
+  @each $value in $image-ratios {
+    &.ratio-#{nth($value, 1)}-#{nth($value, 2)} {
+      overflow: hidden;
+      display: block;
+      object-fit: cover;
+      @include aspect-ratio(nth($value, 1),nth($value, 2));
+      img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        @include position-abslute();
+      }
     }
   }
   @each $name, $value in $image-sizes {
-    &.image-#{$name} {
+    &.#{$name} {
+      overflow: hidden;
+      display: block;
+      object-fit: cover;
+      @include aspect-ratio(1,1);
+      img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        @include position-abslute();
+      }
       width: $value!important;
       height: $value!important;
     }
   }
   @each $name, $value in $image-sizes {
-    &.#{$name} {
+    &.w-#{$name} {
       width: $value!important;
+    }
+  }
+  @each $name, $value in $image-sizes {
+    &.h-#{$name} {
       height: $value!important;
     }
   }

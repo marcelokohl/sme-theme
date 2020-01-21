@@ -1,16 +1,26 @@
 @import "../variables.scss";
 
-
 .Alert {
   padding: space-size(md);
   border-radius: rounded-size(md);
   font-size: font-size(md);
-  color: color(white);
+  color: color(black);
   background-color: color(gray);
+
+  .Icon, .Title, .Text {
+    color: color(black);
+  }
+  .Grid {
+    flex-wrap: nowrap;
+  }
 
   @each $name, $value in $colors {
     &.#{$name} {
       background-color: $value;
     }
   }
+
+  // &.success {
+  //   color: color(black);
+  // }
 }

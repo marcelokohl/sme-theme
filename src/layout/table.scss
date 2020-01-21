@@ -7,18 +7,65 @@
   border-collapse: collapse;
   tr {
     border-bottom: 1px solid #252525;
+    &.active {
+      color: color(primary);
+    }
   }
-  th {
-    padding: 20px 0;
+  td {
+    padding: 0.7rem 0;
+    min-width: 10%;
+
+    position: relative;
+    span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      position: absolute;
+      left: 0;
+      right: 1rem;
+      top: 0;
+      bottom: 0;
+      padding: 1.5rem 0;
+    }
+    &:first-child:after {
+       content: "";
+       display: inline-block;
+       vertical-align: top;
+       min-height: 20px;
+    }
   }
   thead {
-    th {
+    td {
+      cursor: default;
       border-bottom: 1px solid color(white);
+      padding: 1.3rem 0 0.7rem;
+      white-space: nowrap;
+      .Icon {
+        display: inline-block;
+        font-size: 7px;
+        transition: .4s;
+        margin: 0 4px;
+      }
+      &.active {
+        color: color(primary);
+      }
+      &.sort-title {
+        cursor: pointer;
+      }
+      &.sort-up {
+        .Icon {
+          transform: rotate(180deg);
+        }
+      }
     }
   }
   tbody {
-    th, td {
+    td {
       border-bottom: 1px solid color(gray);
+    }
+
+    .empty-label, .empty-label td {
+      border: 0;
     }
   }
 }

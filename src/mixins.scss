@@ -5,6 +5,10 @@
   position: absolute;
   top: 0;right: 0;bottom: 0;left: 0;
 }
+@mixin position($p,$t,$r,$b,$l) {
+  position: $p;
+  top: $t; right: $r; bottom: $b; left: $l;
+}
 @mixin no-select() {
   // -webkit-touch-callout: none; /* iOS Safari */
   //   -webkit-user-select: none; /* Safari */
@@ -27,9 +31,13 @@
 }
 
 @mixin reset {
+  -webkit-appearance: none;
+  font-style: normal;
   background: initial;
   border: 0;
   padding: 0;
   text-transform: initial;
   display: initial;
+  box-shadow: none;
+  outline: none;
 }

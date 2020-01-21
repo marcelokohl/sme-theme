@@ -9,7 +9,10 @@ class Counter extends Component {
     }
   }
 
-  update() {
+  update(val) {
+    if (val) {
+      this.setState({value: val});
+    }
     if (this.state.onEnd != undefined) {
       this.setState({endValue: this.state.value+Number(this.props.step)})
       if ((this.props.step < 0 && this.state.endValue == 0) || (this.props.step < 0 && this.state.endValue == this.props.endValue)) {
@@ -35,6 +38,9 @@ class Counter extends Component {
   }
 
   componentDidMount() {
+    clearTimeout(this.timer);
+    // console.log('Counter: ')
+    // console.log(this.props.children)
     this.setState({value: Number(this.props.children)})
     this.setState({endValue: Number(this.props.end)})
     if (this.props.active) {
@@ -43,6 +49,10 @@ class Counter extends Component {
           t.update();
       },this.props.interval*1000);
     }
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.timer);
   }
 
   render() {

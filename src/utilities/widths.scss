@@ -13,3 +13,12 @@
 .h-full {
   height: 100vh!important;
 }
+
+@each $name, $value in $container-sizes {
+  .max-w-#{$name} {
+    max-width: $value!important;
+  }
+  .min-w-#{$name} {
+    min-width: $value!important;
+  }
+}

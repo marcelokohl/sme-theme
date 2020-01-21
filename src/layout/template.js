@@ -4,11 +4,10 @@ const Template = props => {
   const { children, condition } = props;
   let html = []
   if (condition) {
-    html.push(<Fragment>{children}</Fragment>)
+    return React.createElement(React.Fragment, {}, children)
   } else {
-    html.push(<Fragment></Fragment>)
+    return React.createElement(React.Fragment, {}, [])
   }
-  return html
 };
 
 Template.defaultProps = {

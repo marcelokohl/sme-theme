@@ -2,11 +2,11 @@
 
 
 .Progress {
-  background-color: rgba(color(white),.4);
+  background-color: $background-color-progress;
   width: 100%;
   .progress-bar {
-    height: 4px;
-    background-color: color(white);
+    height: 2rem;
+    background-color: $background-color-progress-bar;
   }
 
   @each $name, $value in $colors {
