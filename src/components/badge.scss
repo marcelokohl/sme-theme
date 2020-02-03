@@ -1,0 +1,53 @@
+.Badge {
+  display: inline-block;
+  .badge-inner {
+    all: unset;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-family: $font-family;
+    color: color(gray);
+    padding: .6em 1rem;
+    background: color(white);
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
+    text-decoration: none;
+    border-radius: $border-radius-button;
+    outline: none;
+    line-height: 1em;
+    display: inline-block;
+    border: 1px solid color(gray);
+    &.Button {
+      cursor: pointer;
+    }
+  }
+  &.active {
+    .badge-inner {
+      color: color(white);
+      background: color(default);
+      border-color: color(default);
+    }
+  }
+  .badge-close {
+    -webkit-appearance: none;
+    font-style: normal;
+    background: initial;
+    border: 0;
+    padding: 0;
+    text-transform: initial;
+    margin: 0 0 0 0.8em;
+    font-size: 1em;
+    text-align: center;
+    text-decoration: none;
+    width: 0.5em;
+    font-weight: normal;
+  }
+
+  &.sm {
+    font-size: font-size(sm);
+    .badge-inner {
+      padding: .4em .6rem;
+    }
+  }
+}

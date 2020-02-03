@@ -1,8 +1,11 @@
 .Page {
-  &.footer {
+  &.with-footer {
     min-height: 100%;
     position: relative;
     padding-bottom: 50px;
+  }
+  &.with-sidebar {
+    margin-left: $page-sidebar-width;
   }
   &.full {
     position: fixed;
@@ -22,6 +25,13 @@
     bottom: 0;
     left: 0;
     right: 0;
+  }
+  .page-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: $page-sidebar-width;
   }
   &.loading .page-loading {
     color: color(white);

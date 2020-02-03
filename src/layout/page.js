@@ -15,11 +15,12 @@ class Page extends React.Component {
   render() {
     if (this.props.hide) return null
 
-    const { children, name, className, loading, footer, title, header } = this.props
+    const { children, name, className, loading, footer, title, header, sidebar } = this.props
     let c = "Page"
 
-    if (footer) c += " footer"
-    if (header) c += " header"
+    if (footer) c += " with-footer"
+    if (header) c += " with-header"
+    if (sidebar) c += " with-sidebar"
     if (className) c += " "+className
     if (loading) c += " loading"
     if (name) c += " page-"+name
@@ -29,6 +30,9 @@ class Page extends React.Component {
       {children}
       {header &&
         <header className="page-header">{header}</header>
+      }
+      {sidebar &&
+        <nav className="page-sidebar">{sidebar}</nav>
       }
       {footer &&
         <footer className="page-footer">{footer}</footer>

@@ -51,6 +51,13 @@ $image-sizes: (
   lg: 400px,
   xl: 500px
 )!default;
+$image-radius-sizes: (
+  xs: 3px,
+  sm: 6px,
+  md: 8px,
+  lg: 10px,
+  xl: 16px
+)!default;
 $image-ratios: (1,1),(3,4),(16,9)!default;
 $video-ratios: (1,1),(3,4),(16,9)!default;
 $container-sizes: (
@@ -130,6 +137,7 @@ $font-size-input-label: font-size(md);
 $border-radius-button: 0px!default;
 $font-family-button: $font-family!default;
 $border-size-button: 2px!default;
+$button-text-color: color(black)!default;
 
 // progress
 $background-color-progress: color(gray)!default;
@@ -145,3 +153,6 @@ $font-family-text: $font-family!default;
 $grid-gutter: .75rem!default;
 $grid-columns: 12!default;
 $grid-max: 1004px!default;
+
+// page
+$page-sidebar-width: 260px;

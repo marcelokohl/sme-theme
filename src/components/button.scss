@@ -56,7 +56,7 @@
   &.link {
     @include reset();
     font-family: $font-family-text;
-    font-size: inherit;
+    // font-size: inherit;
     color: inherit;
     font-weight: inherit;
     text-decoration: underline;

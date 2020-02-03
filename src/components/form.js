@@ -4,7 +4,7 @@ const Form = props => {
   const { children, onSubmit, className } = props;
   let c = "Form " + (className?className:'');
   return (
-    <form onSubmit={onSubmit}>{children}</form>
+    <form className={c} onSubmit={onSubmit}>{children}</form>
   )
 };
 

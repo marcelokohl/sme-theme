@@ -7,15 +7,18 @@ class Input extends React.Component {
     super(props);
     this.state = {
       fileSrc : this.props.imageSrc,
-      fileName : ''
+      fileName : '',
+      value:''
     }
   }
   onInputChange(e) {
+    this.setState({value:e.target.value})
     if (this.props.onChange) {
       this.props.onChange(e)
     }
   }
   onTextareaChange(e) {
+    this.setState({value:e.target.value})
     if (this.props.onChange) {
       this.props.onChange(e)
     }
@@ -39,6 +42,7 @@ class Input extends React.Component {
       type,
       mask,
       options,
+      rows,
       className,
       name,
       imageSrc,
@@ -51,7 +55,9 @@ class Input extends React.Component {
       after,
       plugin,
       append,
-      disabled
+      disabled,
+      maxLength,
+      maxLengthClass
     } = this.props;
 
     let c = "Input-"+ type + " " + (className?" "+className:'');
@@ -102,7 +108,7 @@ class Input extends React.Component {
     else if (type == 'textarea') {
       html.push (
         <Template key={this.genKey()}>
-          <textarea onChange={e => this.onTextareaChange(e)} value={this.props.value}></textarea>
+          <textarea onChange={e => this.onTextareaChange(e)} value={this.props.value} maxLength={maxLength} rows={rows}></textarea>
         </Template>
       )
     }
@@ -135,7 +141,7 @@ class Input extends React.Component {
     else {
       html.push (
         <Template key={this.genKey()}>
-          <input name={name} disabled={disabled} id={id} ref="field" type={type} onChange={e => this.onInputChange(e)} value={this.props.value} />
+          <input name={name} disabled={disabled} id={id} ref="field" type={type} onChange={e => this.onInputChange(e)} value={this.props.value} maxLength={maxLength} />
         </Template>
       );
     }
@@ -161,6 +167,9 @@ class Input extends React.Component {
         <Template condition={errorText != ''}>
           <Text className="error">{errorText}</Text>
         </Template>
+        <Template condition={maxLength != ''}>
+          <Text className={"max-length muted " + maxLengthClass}>{this.props.maxLength - this.state.value.length}</Text>
+        </Template>
       </div>
     );
 
@@ -175,6 +184,8 @@ Input.defaultProps = {
   after:false,
   append:false,
   children: '',
+  maxLength: false,
+  maxLengthClass: '',
   // value:'',
   options:[],
   selectFirstOption: '- Selecionar -',

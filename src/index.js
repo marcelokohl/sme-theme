@@ -5,6 +5,7 @@ import Image from "./components/image";
 import Icon from "./components/icon";
 import Input from "./components/input";
 import Bg from "./components/bg";
+import Badge from "./components/badge";
 import Card from "./components/card";
 import Progress from "./components/progress";
 import Divider from "./components/divider";
@@ -64,6 +65,7 @@ export {
   Progress,
   Status,
   Divider,
+  Badge,
   Bg,
   Counter,
   Alert,

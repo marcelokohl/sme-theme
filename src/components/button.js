@@ -30,12 +30,12 @@ class Button extends React.Component {
 
     if (to) {
       const Link = plugin;
-      return <Link title={title?title:false} className={c} to={to} onClick={onClickB}>{children}</Link>;
+      return <Link title={title?title:''} className={c} to={to} onClick={onClickB}>{children}</Link>;
     } else if (href) {
-      return <a title={title?title:false} className={c}  href={href} onClick={onClickB} target={target}>{children}</a>;
+      return <a title={title?title:''} className={c}  href={href} onClick={onClickB} target={target}>{children}</a>;
     } else {
       return (
-        <button title={title?title:false} disabled={disabled || loading} type={type} className={c} onClick={onClickB}>
+        <button title={title?title:''} disabled={disabled || loading} type={type} className={c} onClick={onClickB}>
           {(loading && behaviour != 'refresh') && <Template><Spinner /><Text>{children}</Text></Template>}
           {(!loading && behaviour != 'refresh') && children}
           {(behaviour == 'refresh') && children}

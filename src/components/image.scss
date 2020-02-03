@@ -60,4 +60,9 @@
       height: $value!important;
     }
   }
+  @each $name, $value in $image-radius-sizes {
+    &.radius-#{$name} {
+      border-radius: $value!important;
+    }
+  }
 }
