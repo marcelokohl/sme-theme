@@ -5,6 +5,7 @@
   width: 100%;
   text-align: left;
   border-collapse: collapse;
+  table-layout:fixed;
   tr {
     border-bottom: 1px solid #252525;
     &.active {
@@ -12,32 +13,53 @@
     }
   }
   td {
-    padding: 0.7rem 0;
+    padding: 0.7rem $grid-gutter;
     min-width: 10%;
 
-    position: relative;
-    &.nowrap {
-      span {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        position: absolute;
-        left: 0;
-        right: 1rem;
-        top: 0;
-        bottom: 0;
-        padding: 1.5rem 0;
+    // &[class*='size-'] {
+    //   // padding: 0 $grid-gutter;
+    // }
+    @for $i from 1 through $grid-columns{
+      &.size-#{$i}{
+        width: (100% / $grid-columns * $i)
       }
     }
-    span {
-      display: block;
+
+    // &:first-child {
+    //   padding-left: 0;
+    // }
+    // &:last-child {
+    //   padding-right: 0;
+    // }
+
+    position: relative;
+    // &.nowrap {
+    //   span {
+    //     white-space: nowrap;
+    //     overflow: hidden;
+    //     text-overflow: ellipsis;
+    //     position: absolute;
+    //     left: 0;
+    //     right: 1rem;
+    //     top: 0;
+    //     bottom: 0;
+    //     padding: 1.5rem 0;
+    //   }
+    // }
+    & > span {
+      display: flex;
+      align-items: center;
+      // display: block;
+      // white-space: nowrap;
+      // overflow: hidden;
+      // text-overflow: ellipsis;
     }
-    &.nowrap:first-child:after {
-      content: "";
-      display: inline-block;
-      vertical-align: top;
-      min-height: 20px;
-    }
+    // &.nowrap:first-child:after {
+    //   content: "";
+    //   display: inline-block;
+    //   vertical-align: top;
+    //   min-height: 20px;
+    // }
   }
   thead {
     td {
@@ -67,6 +89,23 @@
   tbody {
     td {
       border-bottom: 1px solid color(gray);
+
+      // .ellipsis {
+      //     position: relative;
+      // }
+      // .ellipsis:before {
+      //     content: '&nbsp;';
+      //     visibility: hidden;
+      // }
+      // .ellipsis span {
+      //     position: absolute;
+      //     left: 0;
+      //     right: 0;
+      //     white-space: nowrap;
+      //     overflow: hidden;
+      //     text-overflow: ellipsis;
+      // }
+
     }
 
     .empty-label, .empty-label td {

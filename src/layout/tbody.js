@@ -2,9 +2,8 @@ import React from "react";
 
 const Tbody = props => {
   const { children, className } = props;
-  let c = (className?className:'');
   return (
-    <tbody className={c}>{children}</tbody>
+    <tbody className={(className?className:null)}>{children}</tbody>
   );
 };
 

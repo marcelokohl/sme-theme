@@ -47,24 +47,26 @@ class Pagination extends Component {
   }
 
   changePage(e) {
-    this.setState({page: Number(e.target.innerHTML)})
+    this.setPage(Number(e.target.innerHTML))
   }
 
   prevPage() {
     if (this.state.page <= 1) {
       return
     }
-    this.setState({page: this.state.page-1})
+    this.setPage(this.state.page-1)
   }
   nextPage() {
     if (this.state.page >= this.state.size) {
       return
     }
-    this.setState({page: this.state.page+1})
+    this.setPage(this.state.page+1)
   }
-
-  componentDidUpdate() {
-    this.props.onChange(this.state.page)
+  setPage(p) {
+    this.setState({page: p})
+    setTimeout(function(){
+      this.props.onChange(this.state.page)
+    }.bind(this),100)
   }
 
   render() {

@@ -6,9 +6,9 @@
     -moz-appearance: none;
     appearance: none;
     font-family: $font-family;
-    color: color(gray);
+    color: color(white);
     padding: .6em 1rem;
-    background: color(white);
+    background: color(gray);
     font-style: normal;
     font-weight: normal;
     text-align: center;
@@ -18,12 +18,22 @@
     line-height: 1em;
     display: inline-block;
     border: 1px solid color(gray);
-    &.Button {
-      cursor: pointer;
+    letter-spacing: initial;
+
+  }
+  @each $name, $value in $colors {
+    &.#{$name} .badge-inner {
+      background: $value;
+      border-color: $value;
     }
   }
+  .Button.badge-inner {
+    color: color(gray);
+    background: color(white);
+    cursor: pointer;
+  }
   &.active {
-    .badge-inner {
+    .Button.badge-inner {
       color: color(white);
       background: color(default);
       border-color: color(default);

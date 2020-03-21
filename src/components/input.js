@@ -184,7 +184,7 @@ Input.defaultProps = {
   after:false,
   append:false,
   children: '',
-  maxLength: false,
+  maxLength: '',
   maxLengthClass: '',
   // value:'',
   options:[],
